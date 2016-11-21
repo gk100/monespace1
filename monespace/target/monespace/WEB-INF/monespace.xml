@@ -1,0 +1,75 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xmlns:webflow="http://www.springframework.org/schema/webflow-config"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd
+	  http://www.springframework.org/schema/mvc
+	   http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	    http://www.springframework.org/schema/context
+	     http://www.springframework.org/schema/context/spring-context.xsd
+	      http://www.springframework.org/schema/tx 
+	       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	        http://www.springframework.org/schema/websocket
+		     http://www.springframework.org/schema/websocket/spring-websocket.xsd
+		      http://www.springframework.org/schema/webflow-config
+        		http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd">
+
+	<context:component-scan base-package="com.monespace.controller" />
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="org.h2.Driver" />
+		<property name="url" value="jdbc:h2:tcp://localhost/~/monespacedb" />
+		<property name="username" value="kg" />
+		<property name="password" value="" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.monespace.model</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+
+				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+		
+	<tx:annotation-driven />
+	
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+		
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="dealsCategoryDAOImpl" class="com.monespace.DAOImpl.DealsCategoryDAOImpl"></bean>
+	<bean id="dealsCategoryService" class="com.monespace.Service.DealsCategoryService"></bean>
+	<bean id="propertyDealsSubCategoryService" class="com.monespace.Service.PropertyDealsSubCategoryService"></bean>
+	<bean id="propertyDealsSubCategoryDAOImpl" class="com.monespace.DAOImpl.PropertyDealsSubCategoryDAOImpl"></bean>
+	<bean id="userService" class="com.monespace.Service.UserService"></bean>
+	<bean id="userDAOImpl" class="com.monespace.DAOImpl.UserDAOImpl"></bean>
+	<bean id="propertyDealsSubCategory" class="com.monespace.model.PropertyDealsSubCategory"></bean>
+	<bean id="dealer" class="com.monespace.model.Dealer"></bean>
+	<bean id="dealerDAOImpl" class="com.monespace.DAOImpl.DealerDAOImpl"></bean>
+	<bean id="dealerService" class="com.monespace.Service.DealerService"></bean>
+	<bean id="propertyService" class="com.monespace.Service.PropertyService"></bean>
+	<bean id="propertyDAOImpl" class="com.monespace.DAOImpl.PropertyDAOImpl"></bean>
+	<bean id="registrationHandler" class="com.monespace.handler.RegistrationHandler"></bean>
+	<bean id="userBillingAddress" class="com.monespace.model.UserBillingAddress"></bean>
+	<bean id="userPermanentAddress" class="com.monespace.model.UserPermanentAddress"></bean>
+	<bean id="userRole" class="com.monespace.model.UserRole"></bean>
+	<bean id="shortListedPropertyService" class="com.monespace.Service.ShortListedPropertyService"></bean>
+	<bean id="shortListedPropertyDAOImpl" class="com.monespace.DAOImpl.ShortListedPropertyDAOImpl"></bean>
+</beans>
