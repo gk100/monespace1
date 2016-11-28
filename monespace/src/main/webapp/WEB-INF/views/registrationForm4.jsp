@@ -4,7 +4,7 @@
 <title>Buyer Detail</title>
 </head>
 <body>
-	<h2>Registration Form 4: Buyer Detail</h2>
+	<h2>Registration Form 4: Buyer Permanent Address Detail</h2>
 	
 	<form:form	modelAttribute="userPermanentAddress">
 

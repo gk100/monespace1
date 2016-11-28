@@ -30,15 +30,19 @@ public class Property implements Serializable {
 	@Expose
 	private String propertyDescription;
 	@Expose
-	private String propertyDiscount;	/*check if added in .jsp*/
+	private int propertyDiscount;
 	@Expose
-	private String propertyPrice;	/*check if added in .jsp*/
+	private int propertyPrice;	/*check if added in .jsp      int*/
+	@Expose
+	private int quantity;	/*check if added in .jsp      int*/
+
 	@Expose
 	private int propertyDealsSubCategoryId;
 	@Expose
 	private int dealerId;
 	@Expose
 	private int dealsCategoryId;
+	
 	
 /**/	
 	@Expose
@@ -166,21 +170,22 @@ public class Property implements Serializable {
 
 /*check if added in .jsp*/
 	
-	public String getPropertyDiscount() {
+	public int getPropertyDiscount() {
 		return propertyDiscount;
 	}
 
-	public void setPropertyDiscount(String propertyDiscount) {
+	public void setPropertyDiscount(int propertyDiscount) {
 		this.propertyDiscount = propertyDiscount;
 	}
 
-	public String getPropertyPrice() {
+	public int getPropertyPrice() {
 		return propertyPrice;
 	}
 
-	public void setPropertyPrice(String propertyPrice) {
+	public void setPropertyPrice(int propertyPrice) {
 		this.propertyPrice = propertyPrice;
 	}
+
 
 /*check if added in .jsp*/
 	
@@ -188,6 +193,7 @@ public class Property implements Serializable {
 		return propertyOverview1;
 	}
 
+	
 	public void setPropertyOverview1(String propertyOverview1) {
 		this.propertyOverview1 = propertyOverview1;
 	}
@@ -286,6 +292,14 @@ public class Property implements Serializable {
 
 	public void setPropertyContactDetails2(String propertyContactDetails2) {
 		this.propertyContactDetails2 = propertyContactDetails2;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 		
 }

@@ -14,15 +14,22 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-color: #90A4AE;
-    background: url(http://static.poliris.com/z/produits/sl/sv6_gen/images/engine/bg_site.png) repeat-x center top #90A4AE
+	font-family: Arial,Verdana,Helvetica,sans-serif;
+font-size: 11px;
+color: #000;
+text-align: left;
+margin: 0;
+/* background: url(resources/img/bg_site.png) repeat-x center top #BBDEFB; */
+overflow-x: hidden;
 }
-}
+	
+/*     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+/*     font-size: 14px; */
+/*     line-height: 1.42857143; */
+/*     color: #333; */
+/*     background-color: #90A4AE; */
+/*     background: url(http://static.poliris.com/z/produits/sl/sv6_gen/images/engine/bg_site.png) repeat-x center top */
+
 article,
 aside,
 details,

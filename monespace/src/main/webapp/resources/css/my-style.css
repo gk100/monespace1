@@ -308,13 +308,13 @@ border-color: #204d74;
                 margin: 12px 3px;
                 height: 40px;
             }
-            .logo{
+            .mylogo{
                 margin: top;
                 text-align: top;
-                padding-top: 20%;
+                padding-top: 0%;
             }
             .logo img{
-                height: 250px;
+                height: 200px;
             }
             /*footer*/ 
             .footer a{

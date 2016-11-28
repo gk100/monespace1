@@ -42,12 +42,12 @@ public class ShortListedPropertyService {
 	}
 	
 	@Transactional
-	public void deleteShortListedList(int shortListedPropertyId) {
-		shortListedPropertyDAOImpl.deleteShortListedList(shortListedPropertyId);
+	public void deleteShortListedList(int propertyId) {
+		shortListedPropertyDAOImpl.deleteShortListedProperty(propertyId);
 	}
 	
 	@Transactional
-	public void updateShortListedPropertyFlag(int shortListedPropertyId) {
-		shortListedPropertyDAOImpl.updateShortListedPropertyFlag(shortListedPropertyId);
+	public void updateShortListedPropertyFlag(int propertyId) {
+		shortListedPropertyDAOImpl.updateShortListedPropertyFlag(propertyId);
 	}
 }

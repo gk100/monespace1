@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-  <img src="resources/img/{{klm.propertyId}}.jpg" class="img-responsive" alt="Cinque Terre" width="304" height="236">
+  <img src="resources/img/{{klm.propertyId}}.jpg" class="img-responsive" alt="Cinque Terre" Style= "height:500px; width:400px;">
 </div>
 <br>
  

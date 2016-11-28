@@ -7,7 +7,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Header page</title>
+<title>MonEspace!-Buy/Sell/Rent/Construct/Properties Portal</title>
+
+<!--2) For Putting Logo on Tab -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="resources/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="resources/img/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="resources/img/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="resources/img/favicons/manifest.json">
+<link rel="mask-icon" href="resources/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#e3f2fd">
+
+<!-- Logo End -->
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,8 +47,8 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="myController">
-<img background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat"/>
+<body ng-app="myApp" ng-controller="myController" background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat; zoom: 1; background-color: powderblue;">
+<!-- <img background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat"/> -->
 	
 	<!-- Navbar Starts -->
 	
@@ -69,8 +81,8 @@
 <!-- 						<li><a href="#">Kolkata</a></li> -->
 <!-- 						<li><a href="#">Chennai</a></li> -->
 <!-- 					</ul></li> -->
-				<li><a href="aboutUs">About Us</a></li>
-				<li><a href="contactUs">Contact Us</a></li>
+				<li><a href="aboutUs"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
+				<li><a href="contactUs"><span class="glyphicon glyphicon-earphone"></span> Contact Us</a></li>
 				<sec:authorize access="isAuthenticated()">
 				<sec:authentication property="principal.username" var="username"/>
 				<li><a>Welcome ${username}!</a></li>
@@ -83,15 +95,15 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
-				<li><a href="registerForm"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+				<li><a href="registerForm"><span class="glyphicon glyphicon-user"></span> Sign Up!</a></li>
 				</c:if>
 				
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
-				<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+				<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Sign In!</a></li>
 				</c:if>
 				
 				<c:if test="${pageContext.request.userPrincipal.name!=null}">
-				<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+				<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Sign Out!</a></li>
 				</c:if>		
 			</ul>
 		</div>

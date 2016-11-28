@@ -74,4 +74,7 @@
 	<bean id="shortListedPropertyDAOImpl" class="com.monespace.DAOImpl.ShortListedPropertyDAOImpl"></bean>
 	<bean id="viewPropertyService" class="com.monespace.Service.ViewPropertyService"></bean>
 	<bean id="viewPropertyDAOImpl" class="com.monespace.DAOImpl.ViewPropertyDAOImpl"></bean>
+	<bean id="shortListHandler" class="com.monespace.handler.ShortListHandler"></bean>
+	<bean id="bookNow" class="com.monespace.model.BookNow"></bean>
+	<bean id="shortListedProperty" class="com.monespace.model.ShortListedProperty"></bean>
 </beans>

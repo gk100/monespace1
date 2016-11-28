@@ -32,22 +32,29 @@
 <!-- </form> -->
 
 
-<div class="w3-container w3-teal">
-  <h2>Manage Category</h2>
-</div>
+<div class="container">
+	<div class="responsive">
+<h2><b>Manage Category</b></h2>
 
-	<form:form class="w3-container" method="POST" action="add/category" modelAttribute="dealsCategory">
-  	<form:input path="dealsCategoryId" hidden="true" />
+<form:form method="POST" action="add/category" modelAttribute="dealsCategory">
+<form:input path="dealsCategoryId" hidden="true" />
   
-  <label class="w3-label w3-text-teal"><b>Type of Deal: </b></label>
-  <form:input class="w3-input w3-border w3-light-grey" type="text" path="dealsCategoryName"/>
-
-  <label class="w3-label w3-text-teal"><b>Category Description: </b></label>
-  <form:input class="w3-input w3-border w3-light-grey" type="text" path="dealsCategoryDescription"/>
-<br>
-  <button><input type="submit" value="Submit"></button>
+<div class="form-group">
+  	<div class="col-xs-6">
+  		<label for="dealsCategoryName"><b>Type of Deal: </b></label>
+  		<form:input class="form-control input border light-grey " type="text" path="dealsCategoryName" placeholder="Enter type of Deal i.e. Buy, Sell, etc."/>
+	</div>
+	<div class="col-xs-6">
+  		<label><b>Category Description: </b></label>
+  		<form:input class="form-control input border light-grey" type="text" path="dealsCategoryDescription" placeholder="Enter Description about the Deal"/>
+  	</div>
+  	</div>
+ 		<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Category From Here!">Submit</button>
 </form:form>
-
+		
+	</div>
+</div>
+<br>
 <!-- fetching list through JSTL -->
 	<!-- 	<div> -->
 	<!-- 		<table> -->
@@ -69,23 +76,37 @@
 	<!-- 		<br> <br> -->
 	<!-- 	</div> -->
 	
-<div class="w3-container">
+<div class="container">
 
-<div class="w3-responsive">
-<table class="w3-table w3-striped w3-bordered w3-border">
-			
+<div class="responsive">
+<table class="table table-bordered">
+			<thead>
 				<tr>
 					<th>Category Id </th>
 					<th>Category Name </th>
 					<th>Category Description </th>
-					<th>EDIT | DELETE</th>
+					<th>
+					<a class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit Category!">
+					<span class="glyphicon glyphicon-edit"></span>EDIT</a>
+					</th>
+					<th>
+					<a class="btn btn-info btn-sm btn-danger" data-toggle="tooltip" title="Delete Category!">
+					<span class="glyphicon glyphicon-trash"></span> DELETE</a>
+					</th>
 				</tr>
+			</thead>
 				<tr ng-repeat="d in deals | filter: test">
 					<td>{{d.dealsCategoryId}}</td>
 					<td>{{d.dealsCategoryName}}</td>
 					<td>{{d.dealsCategoryDescription}}</td>
-					<td><a href="editCategory-{{d.dealsCategoryId}}">EDIT |</a><a
-						href="deleteCategory-{{d.dealsCategoryId}}">DELETE</a></td>
+					<td>
+					<a href="editCategory-{{d.dealsCategoryId}}" data-toggle="tooltip" title="Click to Edit Category!">
+					<span class="glyphicon glyphicon-edit"></span></a>
+					</td>
+					<td>
+					<a href="deleteCategory-{{d.dealsCategoryId}}" data-toggle="tooltip" title="Click to Delete Category!">
+					<span class="glyphicon glyphicon-trash"></span></a>
+					</td>
 				</tr>
 			
 		</table>

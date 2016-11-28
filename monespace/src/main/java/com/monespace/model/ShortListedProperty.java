@@ -31,11 +31,13 @@ public class ShortListedProperty implements Serializable {
 	@Expose
 	private String propertyDescription;
 	@Expose
-	private String propertyDiscount;
+	private int propertyDiscount;
 	@Expose
-	private String propertyPrice;
+	private int propertyPrice;
 	@Expose
-	private String quantity;
+	private int rate;
+	@Expose
+	private int quantity;		
 	@Expose
 	private Date orderDate;	
 	@Expose
@@ -101,22 +103,6 @@ public class ShortListedProperty implements Serializable {
 		this.propertyDescription = propertyDescription;
 	}
 
-	public String getPropertyDiscount() {
-		return propertyDiscount;
-	}
-
-	public void setPropertyDiscount(String propertyDiscount) {
-		this.propertyDiscount = propertyDiscount;
-	}
-
-	public String getPropertyPrice() {
-		return propertyPrice;
-	}
-
-	public void setPropertyPrice(String propertyPrice) {
-		this.propertyPrice = propertyPrice;
-	}
-
 	public Boolean getFlag() {
 		return flag;
 	}
@@ -149,20 +135,44 @@ public class ShortListedProperty implements Serializable {
 		this.shortList = shortList;
 	}
 
-	public String getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-	}
-
 	public Date getOrderDate() {
 		return orderDate;
 	}
 
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
+	}
+
+	public int getPropertyDiscount() {
+		return propertyDiscount;
+	}
+
+	public void setPropertyDiscount(int propertyDiscount) {
+		this.propertyDiscount = propertyDiscount;
+	}
+
+	public int getPropertyPrice() {
+		return propertyPrice;
+	}
+
+	public void setPropertyPrice(int propertyPrice) {
+		this.propertyPrice = propertyPrice;
+	}
+
+	public int getRate() {
+		return rate;
+	}
+
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 		
 }

@@ -58,10 +58,10 @@ public ShortListedProperty shortListedPropertyList(int shortListedPropertyId) {
 		
 	}
 	
-	public void deleteShortListedList(int shortListedPropertyId) {
+	public void deleteShortListedProperty(int propertyId) {
 		// TODO Auto-generated method stub
 		ShortListedProperty shortListedPropertyDelete= new ShortListedProperty();
-		shortListedPropertyDelete.setShortListedPropertyId(shortListedPropertyId);
+		shortListedPropertyDelete.setShortListedPropertyId(propertyId);
 		sessionFactory.getCurrentSession().delete(shortListedPropertyDelete);
 	}
 

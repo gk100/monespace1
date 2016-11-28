@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+ 		http://www.springframework.org/schema/webflow 
+		http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+	
+	<var name="bookNow" class="com.monespace.model.BookNow"/>
+	<var name="userBillingAddress" class="com.monespace.model.UserBillingAddress"/>
+	<var name="userPermanentAddress.java" class="com.monespace.model.UserPermanentAddress"/>
+	<var name="userDetail" class="com.monespace.model.UserDetail"/>
+	<var name="shortListedProperty" class="com.monespace.model.ShortListedProperty"/>
+	
+		
+	<on-start>
+		<evaluate expression= "ShortListHandler.initFlow()"  result= "flowScope.bookNow"/>
+	</on-start>
+	
+	<action-state id="permanent">
+		<evaluate expression="userService.getPermanentAddressById(externalContext.sessionMap.UserDetail_UserId)" result="userpermanentAddress"></evaluate>
+		<transition to="permanentAddress"></transition>
+	</action-state>
+	
+	<view-state id= "permanentAddress" view = "confirmPermanentAddress" model="userPermanentAddress" >		<!--1) confirmPermanentAddress.jsp -->
+		<transition on = "submit" to = "billing" />
+		<transition on = "edit" to = "editPermanentAddress"/>
+		<transition on = "cancel" to = "cancel"/>
+	</view-state>
+	
+	<view-state id="editPermanentAddress" view = "permanentAddress" model="userPermanentAddress">			<!-- 2) permanentAddress.jsp  -->
+		<transition on = "submit" to = "validatePermanentAddress"/>
+		<transition on = "cancel" to = "cancel"/>
+	</view-state>
+	<action-state id="validatePermanentAddress">
+		<evaluate expression="shortListHandler.validatePermanentAddress(flowscope.BookNow, userPermanentAddress, messageCantext)"></evaluate>
+		<transition on = "success" to = "addPermanentAddress"></transition>
+		<transition on = "failure" to = "editPermanentAddress"></transition>
+	</action-state>
+	<action-state id="addPermanentAddress">
+		<evaluate expression="shortListHandler.addPermanentAddress(flowscope.BookNow, userPermanentAddress)"></evaluate>
+		<transition on = "success" to = "updatePermanentAddress"></transition>
+		<transition on = "failure" to = "editPermanentAddress"></transition>
+	</action-state>
+	<action-state id="updatePermanentAddress">
+		<evaluate expression="userService.saveOrUpdateUserPermanentAddress(userPermanentAddress)"></evaluate>
+		<transition to = "billing"></transition>
+	</action-state>
+	<action-state id="billing">
+		<evaluate expression="userService.getBillingAddressById(externalContext.sessionMap.UserDetail_UserId)" result="billingAddress"></evaluate>
+		<transition to = "billingAddress"></transition>
+	</action-state>
+	
+	
+	<view-state id="billingAddress" view = "confirmBillingAddress" model = "userBillingAddress">		<!--3)  confirmBillingDetail.jsp -->
+		<transition on = "submit" to = "paymentGateway"></transition>
+		<transition on = "edit" to = "editBillingAddress"></transition>
+		<transition on = "cancel" to = "cancel"></transition>
+	</view-state>
+	
+	
+	<view-state id="editBillingAddress" view="billingAddress" model="userBillingAddress">				<!--4) billingDetail.jsp  -->
+		<transition on = "submit" to = "validateBillingAddress"></transition>
+		<transition on = "cancel" to = "cancel"></transition>
+	</view-state>
+	<action-state id="validateBillingAddress">
+		<evaluate expression="shortListHandler.validateBillingAddress(flowscope.bookNow, userBillingAddress, messageContext)"></evaluate>
+		<transition on = "success" to = "addBillingAddress"></transition>
+		<transition on = "failure" to = "editBillingAddress"></transition>
+	</action-state>
+	<action-state id="addBillingAddress">
+		<evaluate expression="shortListHandler.addBillingAddress(flowScope.bookNow, billingAddres)"></evaluate>
+		<transition on = "success" to = "updateBillingAddress"></transition>
+		<transition on = "failure" to = "editBillingAddress"></transition>
+	</action-state>
+	<action-state id="updateBillingAddress">
+		<evaluate expression="userService.saveOrUpdateUserBillingAddress(userBillingAddress)"></evaluate>
+		<transition to="paymentGateway"></transition>
+	</action-state>
+	
+	<view-state id="paymentGateway" view = "paymentPortal">									<!--5) paymentPortal.jsp  -->
+		<transition on = "submit" to = "success"></transition>
+		<transition on = "cancel" to = "cancel"></transition>
+	</view-state>
+	
+	
+	<end-state id="success" view="externalRedirect:contextRelative:/home" />
+	<end-state id="cancel" view="externalRedirect:contextRelative:/home" />
+	</flow>

@@ -13,11 +13,14 @@ public interface UserDAO {
 	public void saveOrUpdateUser (UserDetail userDetail);
 	public List<UserDetail> listDetail();
 	public String userListJson();
-//	public void UpdateUser (int userId);
+	//	public void UpdateUser (int userId);
 	//public void enableDisableUser (int userId);
 	public void saveOrUpdateUserPermanentAddress(UserPermanentAddress userPermanentAddress);
 	public void saveOrUpdateUserBillingAddress(UserBillingAddress userBillingAddress);
 	public void saveOrUpdateUserRole (UserRole userRole);
 	public void saveOrUpdateDealer (Dealer dealer);
+	public UserDetail getUserDetailByName(String username);
 	
+	public UserPermanentAddress getPermanentAddressById(int userId);
+	public UserBillingAddress getBillingAddressById(int userId);
 }

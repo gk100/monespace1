@@ -72,9 +72,11 @@
                                 	<ul class="nomargin">
                                     
                 <a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
+                <a href=""><i class="fa fa-thumbs-o-up fa-2x" id="social"></i></a>
 	            <a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
 	            <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
 	            <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
+	            
                                     
                                     </ul>
                                 </div>

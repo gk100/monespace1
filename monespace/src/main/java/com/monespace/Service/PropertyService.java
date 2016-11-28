@@ -44,4 +44,9 @@ public class PropertyService {
 	public void updtePropertyPlus(int propertyId) {
 		propertyDAOImpl.updtePropertyPlus(propertyId);
 	}
+	
+	@Transactional
+	public void updatePropertyMinus(int propertyId) {
+		propertyDAOImpl.updatePropertyMinus(propertyId);
+	}
 }

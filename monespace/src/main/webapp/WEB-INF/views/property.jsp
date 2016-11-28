@@ -38,6 +38,8 @@
 		<br><form:input class="w3-input w3-border w3-light-grey" path="PropertyDescription" />
 		<br><label class="w3-label w3-text-teal">Starting Price: </label>
 		<br><form:input class="w3-input w3-border w3-light-grey" path="propertyPrice"/>
+		<br><label class="w3-label w3-text-teal">Quantity: </label>
+		<br><form:input class="w3-input w3-border w3-light-grey" path="quantity"/>
 		<br><label class="w3-label w3-text-teal">Discount: </label>
 		<br><form:input class="w3-input w3-border w3-light-grey" path="propertyDiscount"/>
 		<br><label class="w3-label w3-text-teal">Overview Line1: </label>
@@ -84,8 +86,9 @@
 					<th>property Name </th>
 					<th>property Description </th>
 					<th>Starting Price </th>
-					<th>Discount </th>
-<!--				<th>Overview Line1</th>
+					<th>Quantity </th>
+<!--				<th>Discount </th>
+					<th>Overview Line1</th>
  					<th>Overview Line2</th> 
 					<th>Location Advantages Line1 </th>
 					<th>Location Advantages Line2 </th> 
@@ -93,9 +96,9 @@
  					<th>Amenities Line2 </th>
 					<th>Specifications Line1 </th>
 					<th>Specifications Line2 </th>
-	 				<th>Specifications Line3 </th> -->
+	 				<th>Specifications Line3 </th> 
 					<th>About Advertiser Line1 </th>
-<!-- 				<th>About Advertiser Line2 </th> -->
+					<th>About Advertiser Line2 </th> -->
 					<th>Contact Details Line1 </th>
 <!-- 				<th>Contact Details Line2 </th> -->
 					<th>EDIT|DELETE</th>
@@ -105,8 +108,9 @@
 					<td>{{k.propertyName}}</td>
 					<td>{{k.propertyDescription}}</td>
 					<td>{{k.propertyPrice}}</td>
-					<td>{{k.propertyDiscount}}</td>
-<!--				<td>{{k.propertyOverview1}}</td>
+					<td>{{k.quantity}}</td>
+<!--				<td>{{k.propertyDiscount}}</td>
+					<td>{{k.propertyOverview1}}</td>
  					<td>{{k.propertyOverview2}}</td> 
 					<td>{{k.propertyLocationAdvantage1}}</td>
 					<td>{{k.propertyLocationAdvantage2}}</td>
@@ -114,9 +118,9 @@
  					<td>{{k.propertyAmenities2}}</td> 
 					<td>{{k.propertySpecifications1}}</td>
 	 				<td>{{k.propertySpecifications2}}</td> 	
-	 				<td>{{k.propertySpecifications3}}</td>--> 	
+	 				<td>{{k.propertySpecifications3}}</td>	
 					<td>{{k.propertyAdvertiser1}}</td>
-<!--	 			<td>{{k.propertyAdvertiser2}}</td> -->
+	 				<td>{{k.propertyAdvertiser2}}</td> -->
 					<td>{{k.propertyContactDetails1}}</td>
 <!-- 				<td>{{k.propertyContactDetails2}}</td> -->
 					<td><img src="resources/img/{{k.propertyId}}.jpg" width="100" height="100"></td>

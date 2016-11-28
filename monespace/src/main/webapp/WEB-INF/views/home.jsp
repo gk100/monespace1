@@ -248,16 +248,16 @@
       <div class="row">
          <div ng-repeat="k in klm" class="col-xs-18 col-sm-6 col-md-3" >
           <div class="thumbnail">
-            <img src="resources/img/{{k.propertyId}}.jpg">
+            <img Style= "height:250px; width:400px;" src="resources/img/{{k.propertyId}}.jpg">
               <div class="caption">
               <span class="PropertyName"><strong>{{k.propertyName}}</strong></span>
                 <h4>{{k.propertyId}}</h4>
-                <h5>{{k.propertyPrice}}</h5>
+                <h5>Starting Rs.{{k.propertyPrice}}Lacs</h5>
                 <h5>{{k.propertyDescription}}</h5>
 <!--                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p> -->
                 <a href="" class="btn btn-default btn-xs pull-right" role="button"><i class="glyphicon glyphicon-edit"></i></a>
-                <a href="viewProperty-{{k.propertyId}}" class="btn btn-info btn-xs" role="button">More Details</a>
-                <a href="" class="btn btn-default btn-xs" role="button">Button</a>
+                <a href="viewProperty-{{k.propertyId}}" class="btn btn-info btn-xs" role="button">DETAILS!</a>
+                <a href="shortListProperty-{{k.propertyId}}" class="btn btn-default btn-xs" role="button"> SHORTLIST!</a>
             </div>
           </div>
         </div>
@@ -271,6 +271,6 @@
 angular.module('myApp', []).controller('myController',function($scope) {
 			$scope.klm = ${listViewproperty};
 		});
-
 </script>
+
 <%@ include file="footer.jsp"%>

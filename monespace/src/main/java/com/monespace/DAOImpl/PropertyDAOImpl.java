@@ -59,7 +59,12 @@ public class PropertyDAOImpl implements PropertyDAO {
 
 	public void updtePropertyPlus(int propertyId) {
 		// TODO Auto-generated method stub
-		sessionFactory.getCurrentSession().createQuery("update Property where propertyId="+ propertyId).executeUpdate();
+		sessionFactory.getCurrentSession().createQuery("update Property set quantity = quantity + 1 where propertyId="+ propertyId).executeUpdate();
+	}
+
+	public void updatePropertyMinus(int propertyId) {
+		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().createQuery("update Property set quantity= quantity - 1 where propertyId="+ propertyId).executeUpdate();
 	}
 
 }

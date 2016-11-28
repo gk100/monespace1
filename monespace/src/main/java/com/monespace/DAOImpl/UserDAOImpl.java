@@ -89,5 +89,39 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().saveOrUpdate(dealer);
 	}
+
+	@SuppressWarnings ("unchecked")
+	public UserDetail getUserDetailByName(String username) {
+		// TODO Auto-generated method stub
+		String query = "from UserDetail where username='" + username + "'";
+		List<UserDetail> userDetailList = sessionFactory.getCurrentSession().createQuery(query).getResultList();
+		return userDetailList.get(0);
+	}
+
+	@SuppressWarnings("unchecked")
+	public UserPermanentAddress getPermanentAddressById(int userId) {
+		// TODO Auto-generated method stub
+		String qry = "from UserPermanentAddress where UserDetail_UserId="+userId;
+		List<UserPermanentAddress> list=sessionFactory.getCurrentSession().createQuery(qry).getResultList();
+		if (list!=null && !list.isEmpty()){
+			return list.get(0);
+		} else {
+			return null;
+		}
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	public UserBillingAddress getBillingAddressById(int userId) {
+		// TODO Auto-generated method stub
+		String qery="from UserBillingAddress where UserDetail_UserId="+userId;
+		List<UserBillingAddress> list=sessionFactory.getCurrentSession().createQuery(qery).getResultList();
+		if (list!=null && !list.isEmpty()) {
+			return list.get(0);
+		} else {
+			return null;
+		}
+		
+	}
 		
 }

@@ -54,4 +54,19 @@ public class UserService {
 	public void saveOrUpdateDealer(Dealer dealer) {
 		userDAOImpl.saveOrUpdateDealer(dealer);
 	}
+	
+	@Transactional
+	public UserDetail getUserDetailByName(String username) {
+		return userDAOImpl.getUserDetailByName(username);
+	}
+	
+	@Transactional
+	public UserPermanentAddress getPermanentAddressById(int userId) {
+		return userDAOImpl.getPermanentAddressById(userId);
+	}
+	
+	@Transactional
+	public UserBillingAddress getBillingAddressById(int userId) {
+		return userDAOImpl.getBillingAddressById(userId);
+	}
 }

@@ -42,20 +42,31 @@
 			
 				<tr>
 					<th>SubCategory Id </th>
-					<th>Category Id </th>
+<!-- 				<th>Category Id </th> -->
 					<th>SubCategory Name </th>
-					<th>EDIT | DELETE</th>
+					<th>
+					<a href="" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-edit"></span> EDIT</a>	
+					<a href="" class="btn btn-info btn-sm btn-danger">
+					<span class="glyphicon glyphicon-trash"></span> DELETE</a>
+					</th>
 				</tr>
 				<tr ng-repeat="p in propertydeals | filter: test">
 					<td>{{p.propertyDealsSubCategoryId}}</td>
-					<td>{{p.dealsCategoryId}}</td>
+<!-- 				<td>{{p.dealsCategoryId}}</td> -->
 					<td>{{p.propertyType}}</td>
-					<td><a href="editSubCategory-{{p.propertyDealsSubCategoryId}}">EDIT |</a><a href="deleteSubCategory-{{p.propertyDealsSubCategoryId}}">DELETE</a></td>
+					<td>
+					<a href="editSubCategory-{{p.propertyDealsSubCategoryId}}">
+					<span class="glyphicon glyphicon-edit"></span> </a>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="deleteSubCategory-{{p.propertyDealsSubCategoryId}}">
+					<span class="glyphicon glyphicon-trash"></span> </a>
+					</td>
 				</tr>
 			
 </table>
 </div>
 </div>
+<br>
 	<script>
 		angular.module('myApp', []).controller(
 				'myController', function($scope) {

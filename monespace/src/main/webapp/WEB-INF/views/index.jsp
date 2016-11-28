@@ -3,6 +3,17 @@
 <head>
 <title>MonEspace!-Buy/Sell/Rent/Construct/Properties Portal</title>
 
+<!--2) For Putting Logo on Tab -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="resources/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="resources/img/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="resources/img/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="resources/img/favicons/manifest.json">
+<link rel="mask-icon" href="resources/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#e3f2fd">
+
+<!-- Logo End -->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +36,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body style= "background-color: powderblue;">
 												<!-- Navigation -->
 
  <!-- Navigation -->
@@ -39,8 +50,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="aboutUs">
-                    <img src="resources/img/MonEspace!.png" style="height:100%;" alt="">
+                <a class="navbar-brand" href="redirect:/">
+                    <img src="resources/img/MonEspace!.png" style="height:100%;">
 <!--                     <img src="http://placehold.it/150x50&text=Logo" alt=""> -->
                 </a>
             </div>
@@ -48,13 +59,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="aboutUs"><b>AboutUs!</b></a>
+                        <a href="aboutUs"><span class="glyphicon glyphicon-info-sign"></span><b> AboutUs!</b></a>
                     </li>
                     <li>
-                        <a href="home"><b>Home</b></a>
+                        <a href="home"><span class="glyphicon glyphicon-home"></span><b> Home!</b></a>
                     </li>
                     <li>
-                        <a href="contactUs"><b>ContactUs!</b></a>
+                        <a href="contactUs"><span class="glyphicon glyphicon-earphone"></span><b> ContactUs!</b></a>
                     </li>
                 </ul>
             </div>
