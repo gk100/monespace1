@@ -4,7 +4,7 @@
 			<div class="row">
 <!-- 				<h2>Search box</h2> -->
         			<div class="search">
-					<input type="text" ng-model="test" />
+					<input type="text" ng-model="test"/>
 <!-- 					<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" /> -->
  					<br><button style="position: absolute; height: 30px;" type="submit" class="btn btn-primary btn-sm">Search</button>
 					</div>
@@ -34,23 +34,24 @@
 
 <div class="container">
 	<div class="responsive">
-<h2><b>Manage Category</b></h2>
+		<h2><b>Manage Category</b></h2>
 
-<form:form method="POST" action="add/category" modelAttribute="dealsCategory">
-<form:input path="dealsCategoryId" hidden="true" />
+			<form:form method="POST" action="add/category" modelAttribute="dealsCategory">
+			<form:input path="dealsCategoryId" hidden="true" />
   
-<div class="form-group">
-  	<div class="col-xs-6">
-  		<label for="dealsCategoryName"><b>Type of Deal: </b></label>
-  		<form:input class="form-control input border light-grey " type="text" path="dealsCategoryName" placeholder="Enter type of Deal i.e. Buy, Sell, etc."/>
-	</div>
-	<div class="col-xs-6">
-  		<label><b>Category Description: </b></label>
-  		<form:input class="form-control input border light-grey" type="text" path="dealsCategoryDescription" placeholder="Enter Description about the Deal"/>
-  	</div>
-  	</div>
- 		<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Category From Here!">Submit</button>
-</form:form>
+			<div class="form-group">
+  			<div class="col-xs-6">
+  				<label for="dealsCategoryName"><b><h3>Type of Deal:</h3></b></label>
+  				<form:input class="form-control input border light-grey " type="text" path="dealsCategoryName" placeholder="Enter type of Deal i.e. Buy, Sell, etc."/>
+			</div>
+			<div class="col-xs-6">
+  				<label for="dealsCategoryDescription"><b><h3>Category Description:</h3></b></label>
+  				<form:input class="form-control input border light-grey" type="text" path="dealsCategoryDescription" placeholder="Enter Description about the Deal"/>
+  			
+ 				<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Category From Here!">Submit</button>
+			</div>
+  			</div>
+			</form:form>
 		
 	</div>
 </div>

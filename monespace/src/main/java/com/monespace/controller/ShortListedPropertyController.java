@@ -44,13 +44,13 @@ public class ShortListedPropertyController {
 		int propertyId = (Integer) session.getAttribute("propertyId");
 		propertyService.updtePropertyPlus(propertyId);
 		shortListedPropertyService.deleteShortListedList((Integer) session.getAttribute("shortListedPropertyId"));
-		return "redirect:/";
+		return "redirect:/home";
 	}
 	
 	@RequestMapping(value="/updateShortListFlag")
 	public String updateShortListedPropertyFlag (HttpSession session) {
 		shortListedPropertyService.updateShortListedPropertyFlag((Integer) session.getAttribute("shortListedPropertyId"));
-		return "redirect:/";
+		return "redirect:/home";
 	}
 	
 	@RequestMapping(value="/deleteShortListedProperty-{propertyId}",method=RequestMethod.GET)
@@ -58,7 +58,7 @@ public class ShortListedPropertyController {
 		propertyId=(Integer) session.getAttribute("propertyId");
 		propertyService.updtePropertyPlus(propertyId);
 		shortListedPropertyService.deleteShortListedList(propertyId);
-		return "redirect:/";
+		return "redirect:/home";
 	}
 	
 	@RequestMapping("/shortListProperty-{propertyId}")

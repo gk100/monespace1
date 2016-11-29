@@ -81,7 +81,7 @@
 
 <!-- Top Carousel Starts -->
 
-<div class="container1">
+<div class="container1" style="margin-top:50px;">
     <div class="row">
 		<!-- Carousel -->
     	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -180,7 +180,7 @@
 		</div><!-- /carousel -->
 	</div>
 </div>
-
+</div>
 <!-- Carousel Ends -->
   
  <!-- media slider -->

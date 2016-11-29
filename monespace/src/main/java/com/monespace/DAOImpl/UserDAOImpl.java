@@ -101,7 +101,7 @@ public class UserDAOImpl implements UserDAO {
 	@SuppressWarnings("unchecked")
 	public UserPermanentAddress getPermanentAddressById(int userId) {
 		// TODO Auto-generated method stub
-		String qry = "from UserPermanentAddress where UserDetail_UserId="+userId;
+		String qry = "from UserPermanentAddress where UserDetail_UserId="+ userId;
 		List<UserPermanentAddress> list=sessionFactory.getCurrentSession().createQuery(qry).getResultList();
 		if (list!=null && !list.isEmpty()){
 			return list.get(0);

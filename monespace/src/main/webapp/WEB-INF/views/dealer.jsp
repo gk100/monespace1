@@ -19,40 +19,55 @@
 		<br>
 	<!-- Search Bar ends -->
 	
-	<div class="w3-container w3-teal">
+<div class="container">
+	<div class="responsive">
   <h2>Manage Dealer Detail</h2>
-	</div>
+	
 
-		<form:form class="w3-container" method="POST" action="add/dealer" modelAttribute="dealer">
+		<form:form method="POST" action="add/dealer" modelAttribute="dealer">
 		<form:input path="dealerId" hidden="true" />
-		<table>
-			<tr>
-				<form:label class="w3-label w3-text-teal" path="dealerName">Name of Dealer: </form:label>
-				<form:input class="w3-input w3-border w3-light-grey" path="dealerName"/>
-				<br><br>
-				<form:label class="w3-label w3-text-teal" path="dealerOrganisation">Name of Organization: </form:label>
-				<form:input class="w3-input w3-border w3-light-grey" path="dealerOrganisation"/>
-				<br><br>
-				<form:label class="w3-label w3-text-teal" path="dealerAddress1">Address Line1: </form:label>
-				<form:input class="w3-input w3-border w3-light-grey" path="dealerAddress1"/>
-				<br><br>
-				<form:label class="w3-label w3-text-teal" path="dealerAddress2">Address Line2: </form:label>
-				<form:input class="w3-input w3-border w3-light-grey" path="dealerAddress2"/>
-				<br><br>
-				<form:label class="w3-label w3-text-teal" path="dealerContactNumber">Contact Number: </form:label>
-				<form:input class="w3-input w3-border w3-light-grey" path="dealerContactNumber"/>
-				<br><br>
-				<form:label class="w3-label w3-text-teal" path="dealerMobileNumber">Mobile Number: </form:label>
-				<form:input class="w3-input w3-border w3-light-grey" path="dealerMobileNumber"/>
-				<br><br>
-				<form:label class="w3-label w3-text-teal" path="dealerEmailId">Email-Id: </form:label>
-				<form:input class="w3-input w3-border w3-light-grey" path="dealerEmailId"/>
-<!-- 				<td colspan="2"> -->
-				<br><input type="submit" value="Submit"/>
+		
+			<div class="form-group">
+			<div class="col-xs-6">
+				<form:label path="dealerName">Name of Dealer: </form:label>
+				<form:input class="form-control input border light-grey" path="dealerName"/>
+			</div>
+			<div class="col-xs-6">
+				<form:label path="dealerOrganisation">Name of Organization: </form:label>
+				<form:input class="form-control input border light-grey" path="dealerOrganisation"/>
+				</div>
+			<div class="col-xs-6">
+				<form:label path="dealerAddress1">Address Line1: </form:label>
+				<form:input class="form-control input border light-grey" path="dealerAddress1"/>
+			</div>
+				<div class="col-xs-6">
+				<form:label  path="dealerAddress2">Address Line2: </form:label>
+				<form:input class="form-control input border light-grey" path="dealerAddress2"/>
+				</div>
+				<div class="col-xs-6">
+				<form:label path="dealerContactNumber">Contact Number: </form:label>
+				<form:input class="form-control input border light-grey" path="dealerContactNumber"/>
+				</div>
+				<div class="col-xs-6">
+				<form:label path="dealerMobileNumber">Mobile Number: </form:label>
+				<form:input class="form-control input border light-grey" path="dealerMobileNumber"/>				
+				</div>
+				<div class="col-xs-6">
+				<form:label path="dealerEmailId">Email-Id: </form:label>
+				<form:input class="form-control input border light-grey" path="dealerEmailId"/>
+				
+				
+<!-- 				<td colspan="2"> -->				
+				<input type="submit" value="Submit"/>
+				</div>
+				</div>
 <!-- 				</td> -->
-			</tr>
-		</table>
+			
+		
 	</form:form>
+</div>
+</div>
+
 <div class="w3-container">
 <div class="w3-responsive">
 <table class="w3-table w3-striped w3-bordered w3-border">

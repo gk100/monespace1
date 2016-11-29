@@ -6,7 +6,7 @@
 <div class="container">
 
 
-<div class="col-lg-6">
+<div class="col-lg-6 col-md-offset-3">
             <div class="well bs-component">
               <form class="form-horizontal">
                 <fieldset>
@@ -26,7 +26,7 @@
                       
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox"> Checkbox
+                          <input type="checkbox" style="position: relative;"> Checkbox
                         </label>
                       </div>
                     
@@ -46,13 +46,13 @@
                     <div class="col-lg-10">
                       <div class="radio">
                         <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="" style="position: relative;">
                           Option one is this
                         </label>
                       </div>
                       <div class="radio">
                         <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" style="position: relative;">
                           Option two can be something else
                         </label>
                       </div>
@@ -82,8 +82,8 @@
                   
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                      <button type="reset" class="btn1 btn-default">Cancel</button>
-                      <button type="submit" class="btn1 btn-primary">Submit</button>
+                      <button name="_eventId_submit" type="submit" class="btn btn-success btn-block">Submit</button>
+					<button name="_eventId_cancel" type="submit" class="btn btn-danger">Cancel</button>
                     </div>
                   </div>
                 

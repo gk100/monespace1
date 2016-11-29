@@ -13,22 +13,29 @@
 		<br>
 	<!-- Search Bar ends -->
 
-<div class="w3-container w3-teal">
-  <h2>Manage Sub Category</h2>
+<div class="container">
+	<div class="responsive">
+		<h2><b>Manage Sub Category</b></h2>
+
+				<form:form method="POST" action="add/subCategories" modelAttribute="propertyDealsSubCategory">
+				<form:input path="propertyDealsSubCategoryId" hidden="true"/>
+			
+			<div class="form-group">
+			<div class="col-xs-6">
+				<label for="dealsCategory.dealsCategoryName"><b>Type of Deal: </b></label>
+				<form:select class="form-control input border light-grey" path="dealsCategory.dealsCategoryName" items= "${listCategory}" itemValue="dealsCategoryName" itemLabel= "dealsCategoryName"></form:select>
+			</div>
+			<div class="col-xs-6">
+				<label for="propertyType">SubCategory: </label>
+				<form:input class="form-control input border light-grey" type="text" path="propertyType" placeholder="Enter Subcategory"/>
+			
+				<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Category From Here!">Submit</button>
+			</div>
+			</div>
+			</form:form>
+	</div>
 </div>
-	<form:form class="w3-container" method="POST" action="add/subCategories" modelAttribute="propertyDealsSubCategory">
-	<form:input path="propertyDealsSubCategoryId" hidden="true"/>
-	
-	<label class="w3-label w3-text-teal"><b>Type of Deal: </b></label>
-	<form:select class="w3-input w3-border w3-light-grey" path="dealsCategory.dealsCategoryName" items= "${listCategory}" itemValue="dealsCategoryName" itemLabel= "dealsCategoryName"></form:select>
-	<br><br>
-	
-	<label class="w3-label w3-text-teal">SubCategory: </label>
-	<form:input class="w3-input w3-border w3-light-grey" type="text" path="propertyType"/>
-	
-	<br><td colspan="2"><input type="submit" value="Submit" /></td>
-	</form:form>
-	
+<br>
 	
 	<%-- <c:forEach items="${listDealsCategories}" var="DealsCategory">
 					<tr>
@@ -36,20 +43,22 @@
 						<td><c:out value="${DealsCategory.dealsCategoryname}"></c:out></td>
 					</tr>
 		</c:forEach> --%>
-<div class="w3-container">
-<div class="w3-responsive">
-<table class="w3-table w3-striped w3-bordered w3-border">
-			
+<div class="container">
+<div class="responsive">
+<table class="table table-bordered">
+			<thead>
 				<tr>
 					<th>SubCategory Id </th>
 <!-- 				<th>Category Id </th> -->
 					<th>SubCategory Name </th>
 					<th>
-					<a href="" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-edit"></span> EDIT</a>	
-					<a href="" class="btn btn-info btn-sm btn-danger">
-					<span class="glyphicon glyphicon-trash"></span> DELETE</a>
+					<a href="" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-edit"></span> EDIT</a>
+					</th>
+					<th>	
+					<a href="" class="btn btn-info btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> DELETE</a>
 					</th>
 				</tr>
+				</thead>
 				<tr ng-repeat="p in propertydeals | filter: test">
 					<td>{{p.propertyDealsSubCategoryId}}</td>
 <!-- 				<td>{{p.dealsCategoryId}}</td> -->
@@ -57,7 +66,8 @@
 					<td>
 					<a href="editSubCategory-{{p.propertyDealsSubCategoryId}}">
 					<span class="glyphicon glyphicon-edit"></span> </a>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					<td>
 					<a href="deleteSubCategory-{{p.propertyDealsSubCategoryId}}">
 					<span class="glyphicon glyphicon-trash"></span> </a>
 					</td>

@@ -47,7 +47,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="myController" background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat; zoom: 1; background-color: powderblue;">
+<body ng-app="myApp" ng-controller="myController" background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat; zoom: 1; background-color: burlywood;">
 <!-- <img background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat"/> -->
 	
 	<!-- Navbar Starts -->

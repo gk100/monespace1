@@ -23,6 +23,7 @@
 		<intercept-url pattern="/dealer" access="hasAnyRole('ROLE_DEALER', 'ROLE_ADMIN')"/>
 		<intercept-url pattern="/category" access="hasRole('ROLE_ADMIN')"/>
 		<intercept-url pattern="/subCategories" access="hasRole('ROLE_ADMIN')"/>
+		<intercept-url pattern="/shortListProperty-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
 		<access-denied-handler error-page="/403" />
 		<form-login 
 		login-page="/login" 
