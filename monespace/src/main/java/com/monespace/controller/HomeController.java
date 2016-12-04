@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.monespace.Service.DealsCategoryService;
 import com.monespace.Service.PropertyDealsSubCategoryService;
-import com.monespace.Service.ShortListedPropertyService;
+import com.monespace.Service.UserService;
+//import com.monespace.Service.ShortListedPropertyService;
 import com.monespace.Service.ViewPropertyService;
 
 @Controller
@@ -23,7 +24,10 @@ public class HomeController {
 	private ViewPropertyService viewPropertyService;
 	
 	@Autowired
-	private ShortListedPropertyService shortListedPropertyService;
+	private UserService userService;
+	
+//	@Autowired
+//	private ShortListedPropertyService shortListedPropertyService;
 	
 	@RequestMapping("/home")
 	public String Hompage(Model model) {
@@ -31,7 +35,8 @@ public class HomeController {
 		model.addAttribute("listDealsCategory", dealsCategoryService.listDealsCategories());
 		model.addAttribute("listDealsCategories", propertyDealsSubCategoryService.propertyDealsSubCategoryList());
 		model.addAttribute("listViewproperty", viewPropertyService.stringViewProperty());
-		model.addAttribute("ShortListedPropertyList");
+		model.addAttribute("userList",userService.userListJson());
+//		model.addAttribute("ShortListedPropertyList");
 		return "home";
 	}
 }

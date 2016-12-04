@@ -6,7 +6,7 @@
         			<div class="search">
 					<input type="text" ng-model="test"/>
 <!-- 					<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" /> -->
- 					<br><button style="position: absolute; height: 30px;" type="submit" class="btn btn-primary btn-sm">Search</button>
+ 					<button style="position: absolute; height: 30px;" type="submit" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Search Category Here!"> Search</button>
 					</div>
 			</div>
 		</div>
@@ -32,8 +32,7 @@
 <!-- </form> -->
 
 
-<div class="container">
-	<div class="responsive">
+<div class="container" style="margin-top:10px;">
 		<h2><b>Manage Category</b></h2>
 
 			<form:form method="POST" action="add/category" modelAttribute="dealsCategory">
@@ -41,21 +40,20 @@
   
 			<div class="form-group">
   			<div class="col-xs-6">
-  				<label for="dealsCategoryName"><b><h3>Type of Deal:</h3></b></label>
+  				<label for="dealsCategoryName"><b>Deal Name:</b></label>
   				<form:input class="form-control input border light-grey " type="text" path="dealsCategoryName" placeholder="Enter type of Deal i.e. Buy, Sell, etc."/>
 			</div>
 			<div class="col-xs-6">
-  				<label for="dealsCategoryDescription"><b><h3>Category Description:</h3></b></label>
+  				<label for="dealsCategoryDescription"><b>Description:</b></label>
   				<form:input class="form-control input border light-grey" type="text" path="dealsCategoryDescription" placeholder="Enter Description about the Deal"/>
-  			
- 				<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Category From Here!">Submit</button>
-			</div>
+  			</div>
+ 			<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Category From Here!">Submit</button>
+			
   			</div>
 			</form:form>
 		
 	</div>
-</div>
-<br>
+<hr>
 <!-- fetching list through JSTL -->
 	<!-- 	<div> -->
 	<!-- 		<table> -->
@@ -78,16 +76,15 @@
 	<!-- 	</div> -->
 	
 <div class="container">
-
-<div class="responsive">
+<div class="table-responsive">
 <table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Category Id </th>
+					<th>#</th>
 					<th>Category Name </th>
-					<th>Category Description </th>
+<!-- 					<th>Category Description </th> -->
 					<th>
-					<a class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit Category!">
+					<a class="btn btn-info btn-sm btn-warning" data-toggle="tooltip" title="Edit Category!">
 					<span class="glyphicon glyphicon-edit"></span>EDIT</a>
 					</th>
 					<th>
@@ -99,7 +96,7 @@
 				<tr ng-repeat="d in deals | filter: test">
 					<td>{{d.dealsCategoryId}}</td>
 					<td>{{d.dealsCategoryName}}</td>
-					<td>{{d.dealsCategoryDescription}}</td>
+<!-- 				<td>{{d.dealsCategoryDescription}}</td> -->
 					<td>
 					<a href="editCategory-{{d.dealsCategoryId}}" data-toggle="tooltip" title="Click to Edit Category!">
 					<span class="glyphicon glyphicon-edit"></span></a>

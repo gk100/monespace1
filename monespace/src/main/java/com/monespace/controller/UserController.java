@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.monespace.Service.UserService;
 import com.monespace.model.User;
-import com.monespace.model.UserBillingAddress;
 import com.monespace.model.UserDetail;
-import com.monespace.model.UserPermanentAddress;
-import com.monespace.model.UserRole;
+//import com.monespace.model.UserBillingAddress;
+//import com.monespace.model.UserPermanentAddress;
+//import com.monespace.model.UserRole;
 
 @Controller
 public class UserController {

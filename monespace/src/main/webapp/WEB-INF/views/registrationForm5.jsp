@@ -1,10 +1,6 @@
 <%@ include file="header.jsp"%>
-<html>
-<head>
-<title>Registration Form 5</title>
-</head>
-<body>
-	<h5>registration Form 6: User Billing Detail</h5>
+
+
 	<form:form modelAttribute="userBillingAddress">
 		<br>
 		<label for="houseNumber">House Number:</label>
@@ -32,5 +28,5 @@
 		<button name="_eventId_submit" type="submit" class="btn btn-warning" value="Submit">Submit</button>
 		<button name="_eventId_cancel" type="submit" class="btn btn-warning" value="Cancel">Cancel</button>
 	</form:form>
-</body>
-</html>
+
+<%@ include file="footer.jsp"%>

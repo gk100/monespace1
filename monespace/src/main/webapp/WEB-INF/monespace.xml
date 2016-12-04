@@ -77,5 +77,7 @@
 	<bean id="shortListHandler" class="com.monespace.handler.ShortListHandler"></bean>
 	<bean id="bookNow" class="com.monespace.model.BookNow"></bean>
 	<bean id="shortListedProperty" class="com.monespace.model.ShortListedProperty"></bean>
+	<bean id="wishListService" class="com.monespace.Service.WishListService"></bean>
+	<bean id="wishListDAOImpl" class="com.monespace.DAOImpl.WishListDAOImpl"></bean>
 	
 </beans>

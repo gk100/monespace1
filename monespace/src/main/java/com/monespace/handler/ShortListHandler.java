@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import com.monespace.Service.UserService;
 import com.monespace.model.BookNow;
 import com.monespace.model.UserBillingAddress;
-import com.monespace.model.UserDetail;
 import com.monespace.model.UserPermanentAddress;
 
 

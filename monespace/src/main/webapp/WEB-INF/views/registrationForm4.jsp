@@ -1,10 +1,5 @@
 <%@ include file="header.jsp"%>
-<html>
-<head>
-<title>Buyer Detail</title>
-</head>
-<body>
-	<h2>Registration Form 4: Buyer Permanent Address Detail</h2>
+
 	
 	<form:form	modelAttribute="userPermanentAddress">
 
@@ -49,5 +44,5 @@
 		<button name="_eventId_submit" type="submit" class="btn btn-warning" value="Submit">Submit</button>
 		<button name="_eventId_cancel" type="submit" class="btn btn-warning" value="Cancel">Cancel</button>
 	</form:form>
-</body>
-</html>
+
+<%@ include file="footer.jsp"%>

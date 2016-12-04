@@ -7,3 +7,5 @@
 			<form:password path="password" />
 			<input type="submit">
 </form:form>
+
+<%@ include file="footer.jsp"%>

@@ -3,7 +3,7 @@
 
 
 
-<div class="container" style="margin-top: 50px;">
+<div class="container" style="margin-top: 75px;">
 <div class="col-md-6 col-md-offset-3">
     <div class="form-area">  
         <form role="form">

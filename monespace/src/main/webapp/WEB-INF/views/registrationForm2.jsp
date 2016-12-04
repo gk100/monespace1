@@ -1,18 +1,10 @@
 <%@ include file = "header.jsp" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Select Role</title>
-</head>
-<body>
+
 <h2>registration Form 2: Select Role</h2>
 
 <form:form modelAttribute="userRole">
 
-		<div class="container">
+		<div class="container" style="margin-top:20px;">
 			<div class="col-lg-4 col-md-3 col-sm-2"></div>
 				<div class="col-lg-4 col-md-6 col-sm-8">
 				
@@ -28,5 +20,5 @@
 			<div class="col-lg-4 col-md-3 col-sm-2"></div>
 		</div>
 </form:form>
-</body>
-</html>
+
+<%@ include file="footer.jsp"%>

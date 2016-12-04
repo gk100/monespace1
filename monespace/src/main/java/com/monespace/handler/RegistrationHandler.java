@@ -44,6 +44,30 @@ public class RegistrationHandler {
 			messageContext.addMessage(new MessageBuilder().error().source("firstName").defaultText("First Name is Mandatory").build());
 			status="failure";
 		}
+		else if (!userDetail.getFirstName().isEmpty()) {
+			for(UserDetail d: listDetail) {
+				if (d.getFirstName().equals(userDetail.getFirstName())) {
+					messageContext.addMessage(new MessageBuilder().error().source("firstName").defaultText("First Name Already Exists! Please Try Any Other!").build());
+					status="failure";
+					break;
+				}
+			}
+		}
+		
+		if (userDetail.getLastName().isEmpty()) {
+			messageContext.addMessage(new MessageBuilder().error().source("lastName").defaultText("Last Name is Mandatory").build());
+			status="failure";
+		}
+		else if (!userDetail.getLastName().isEmpty()) {
+			for(UserDetail d: listDetail) {
+				if (d.getLastName().equals(userDetail.getLastName())) {
+					messageContext.addMessage(new MessageBuilder().error().source("lastName").defaultText("Last Name Already Exists! Please Enter Any Other!").build());
+					status="failure";
+					break;
+				}
+			}
+		}
+		
 		if (userDetail.getMobileNumber().isEmpty() || (userDetail.getMobileNumber().length()!=10 && !userDetail.getMobileNumber().isEmpty())) {
 			if (userDetail.getMobileNumber().length()!=10 && !userDetail.getMobileNumber().isEmpty()) {
 				messageContext.addMessage(new MessageBuilder().error().source("mobileNunber").defaultText("Mobile Number should be of 10 digits").build());
@@ -53,9 +77,18 @@ public class RegistrationHandler {
 			}
 			status="failure";
 		}
+		else if (!userDetail.getMobileNumber().isEmpty()) {
+			for(UserDetail d: listDetail) {
+				if (d.getMobileNumber().equals(userDetail.getMobileNumber())) {
+					messageContext.addMessage(new MessageBuilder().error().source("mobileNumber").defaultText("Mobile Number Already Exists! Please Enter Any Other!").build());
+					status="failure";
+					break;
+				}
+			}
+		}
 		if (userDetail.getEmailId().isEmpty() || (!userDetail.getEmailId().contains("@") && !userDetail.getEmailId().isEmpty())) {
 			if(!userDetail.getEmailId().contains("@") && !userDetail.getEmailId().isEmpty()) {
-				messageContext.addMessage(new MessageBuilder().error().source("emailId").defaultText("Invalid Format. Should contain @").build());
+				messageContext.addMessage(new MessageBuilder().error().source("emailId").defaultText("Invalid Format!").build());
 			}
 			else {
 				messageContext.addMessage(new MessageBuilder().error().source("emailId").defaultText("Email Id is Mandatory").build());
@@ -65,7 +98,7 @@ public class RegistrationHandler {
 		else if (!userDetail.getEmailId().isEmpty()) {
 			for(UserDetail d: listDetail) {
 				if (d.getEmailId().equals(userDetail.getEmailId())) {
-					messageContext.addMessage(new MessageBuilder().error().source("emailId").defaultText("Email Id is already exists.Please Try Another.").build());
+					messageContext.addMessage(new MessageBuilder().error().source("emailId").defaultText("Email Id is Already Exists! Please Try Another.").build());
 					status="failure";
 					break;
 				}
@@ -78,7 +111,7 @@ public class RegistrationHandler {
 		else if (userDetail.getUsername().isEmpty()) {
 			for (UserDetail d: listDetail) {
 				if(d.getUsername().equals(userDetail.getUsername())) {
-					messageContext.addMessage(new MessageBuilder().error().source("username").defaultText("username is already exists.Please Try Another.").build());
+					messageContext.addMessage(new MessageBuilder().error().source("username").defaultText("username is Already Exists! Please Try Another.").build());
 					status="failure";
 					break;
 				}

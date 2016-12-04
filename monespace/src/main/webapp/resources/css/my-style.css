@@ -9,10 +9,11 @@
 
 /************************************Footer*********************************************************/
 
-@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
-@import url(http://fonts.googleapis.com/css?family=Gudea);
+/* @import url(http://fonts.googleapis.com/css?family=Fjalla+One); */
+/* @import url(http://fonts.googleapis.com/css?family=Gudea); */
 .footer1 {
     background: rgba(217, 237, 247, 0.64) url("../images/footer/footer-bg.png") repeat scroll left top;
+    background-color: #303F9F;
 	padding-top: 40px;
 	padding-right: 0;
 	padding-bottom: 20px;
@@ -105,10 +106,13 @@
 -webkit-transition-duration: 0.5s; 
 -moz-transition-duration: 0.5s;
 -o-transition-duration: 0.5s;
-			}           
+			}   
+     
 /********************************* Only Needed in Multi-Coloured Variation************************/
+			
 			.social-fb:hover {
-				color: #3B5998;
+				color: #C5CAE9;
+				/*#3B5998;*/
 			}
 			.social-tw:hover {
 				color: #4099FF;

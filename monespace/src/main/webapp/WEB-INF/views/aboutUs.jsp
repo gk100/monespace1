@@ -1,9 +1,8 @@
 <%@ include file="header.jsp"%>
-<h1>Welcome to About us Page</h1>
-<h4>Page is under construction</h4>
+
 
  
-<div class="container">
+<div class="container" style="margin-top:120px;">
 
 
 <div class="col-lg-6 col-md-offset-3">

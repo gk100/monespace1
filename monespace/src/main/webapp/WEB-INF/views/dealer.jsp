@@ -1,10 +1,4 @@
 <%@ include file = "header.jsp" %>
-<html>
-<head>
-<title>Insert title here</title>
-</head>
-<body>
-<body >
 	
 	<!-- Search Bar -->
 		<div class="container">
@@ -19,7 +13,7 @@
 		<br>
 	<!-- Search Bar ends -->
 	
-<div class="container">
+<div class="container" style="margin-top:10px;">
 	<div class="responsive">
   <h2>Manage Dealer Detail</h2>
 	
@@ -58,7 +52,8 @@
 				
 				
 <!-- 				<td colspan="2"> -->				
-				<input type="submit" value="Submit"/>
+				<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Dealer From Here!">Submit</button>
+<!-- 				<input type="submit" value="Submit"/> -->
 				</div>
 				</div>
 <!-- 				</td> -->
@@ -68,32 +63,48 @@
 </div>
 </div>
 
-<div class="w3-container">
-<div class="w3-responsive">
-<table class="w3-table w3-striped w3-bordered w3-border">
-			
+<hr>
+
+<div class="container">
+<div class="table-responsive">
+<table class="table table-bordered">
+			<thead>
 				<tr>
-					<th>Dealer Id </th>
-					<th>Name of Dealer </th>
-					<th>Name of Organization</th>
-					<th>Address Line1 </th>
-					<th>Address Line2 </th>
-					<th>Contact Number </th>
-					<th>Mobile Number </th>
-					<th>Email-Id </th>
-					<th>EDIT | DELETE</th>
+					<th>#</th>
+					<th>Name of Dealer</th>
+					<th>Oraganisation</th>
+<!-- 				<th>Name of Organization</th> -->
+					<th>Address</th>
+<!-- 				<th>Address Line1 </th>
+					<th>Address Line2 </th> -->
+					<th>Contact Number</th>
+					<th>Mobile Number</th>
+					<th>Email-Id</th>
+					<th>
+					<a class="btn btn-info btn-sm btn-warning" data-toggle="tooltip" title="Edit Dealer Database!">
+					<span class="glyphicon glyphicon-edit"></span>EDIT</a>
+					</th>
+					<th>
+					<a class="btn btn-info btn-sm btn-danger" data-toggle="tooltip" title="Delete Dealer Database!">
+					<span class="glyphicon glyphicon-trash"></span> DELETE</a>
+					</th>
 				</tr>
+			</thead>
 				<tr ng-repeat="e in dealer | filter: test">
 					<td>{{e.dealerId}}</td>
 					<td>{{e.dealerName}}</td>
 					<td>{{e.dealerOrganisation}}</td>
-					<td>{{e.dealerAddress1}}</td>
-					<td>{{e.dealerAddress2}}</td>
+					<td>{{e.dealerAddress1}}, {{e.dealerAddress2}}</td>
+<!-- 					<td>{{e.dealerAddress2}}</td> -->
 					<td>{{e.dealerContactNumber}}</td>
 					<td>{{e.dealerMobileNumber}}</td>
 					<td>{{e.dealerEmailId}}</td>
-					<td><a href="editDealer-{{e.dealerId}}">EDIT |</a><a
-						href="deleteDealer-{{e.dealerId}}">DELETE</a></td>
+					<td><a href="editDealer-{{e.dealerId}}"data-toggle="tooltip" title="Click to Edit Dealer Database!">
+					<span class="glyphicon glyphicon-edit"></span></a>
+					</td>
+					<td>
+					<a href="deleteDealer-{{e.dealerId}}" data-toggle="tooltip" title="Click to Delete Dealer Database!">
+					<span class="glyphicon glyphicon-trash"></span></a></td>
 				</tr>
 </table>
 </div>

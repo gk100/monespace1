@@ -1,9 +1,5 @@
 <%@ include file="header.jsp"%>
-<html>
-<head>
-<title>Confirm Form 1</title>
-</head>
-<body>
+
 	<h5>Voila! C'est un confirmForm1...</h5>
 	<form:form commandName="userDetail" modelAttribute="userDetail">
 
@@ -23,5 +19,5 @@
 		<button name="_eventId_submit" type="submit" class="btn btn-warning">Submit</button>
 		<button name="_eventId_cancel" type="submit" class="btn btn-warning">Cancel</button>
 	</form:form>
-</body>
-</html>
+
+<%@ include file="footer.jsp"%>

@@ -24,3 +24,5 @@
 			<form:input type="hidden" path="userBillingAddress.city" />
 			<button type="submit" class="btn btn-warning">Submit</button>
 		</form:form>
+
+<%@ include file="footer.jsp"%>

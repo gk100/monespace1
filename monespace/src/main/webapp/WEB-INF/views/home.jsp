@@ -1,6 +1,6 @@
 <%@ include file="header.jsp"%>
 <div id="navbar">
-  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <nav class="navbar navbar-default col-lg-10 col-md-offset-1" role="navigation" style="margin-top:-20px;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -8,7 +8,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">We Offer you...</a>
+      <a class="navbar-brand" href="#">Explore Your Property Here Now!</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -49,29 +49,36 @@
 
 <sec:authorize access="hasRole('ROLE_ADMIN')">
 <li class="dropdown">
-          <a href="#">Manage Database <b class="caret"></b></a>
+          <a href="#"> My Account <i class="fa fa-cog fa-lg" aria-hidden="true" data-toggle="tooltip" title="Manage Your Account ADMIN: ${username}!"></i><b class="caret"></b></a>
           <ul class="dropdown-menu">
 <!--             <li class="kopie"><a href="#">Dropdown2</a></li> -->
-            <li><a href="category">Type of Deals</a></li>
-            <li><a href="subCategories">Type of Property</a></li>
-            <li><a href="dealer">Dealer Profile</a></li>
-            <li><a href="property">Property Details</a></li>
+            <li><a href="category">Type of Deals <i class="fa fa-database" aria-hidden="true"></i></a></li>
+            <li><a href="subCategories">Type of Property <i class="fa fa-database" aria-hidden="true"></i></a></li>
+            <li><a href="dealer">Dealer Profile <i class="fa fa-database" aria-hidden="true"></i></a></li>
+            <li><a href="property">Property Details <i class="fa fa-database" aria-hidden="true"></i></a></li>
           </ul>
 </li>
 </sec:authorize>
 
 <sec:authorize access="hasRole('ROLE_DEALER')">
 <li class="dropdown">
-          <a href="#">Manage My Profile and Properties<b class="caret"></b></a>
+          <a href="#"><b>My Account <i class="fa fa-cog fa-lg" aria-hidden="true" data-toggle="tooltip" title="Manage Your Account Dealer: ${username}!"></i></b><b class="caret"></b></a>
           <ul class="dropdown-menu">
-			<li><a href="dealer">My Profile</a></li>
-            <li><a href="property">My Property Details</a></li>
+			<li><a href="dealer">My Profile <i class="fa fa-user" aria-hidden="true"></i></a></li>
+            <li><a href="property">My Property Details <i class="fa fa-database" aria-hidden="true"></i></a></li>
           </ul>
 </li>
 </sec:authorize>
 
-
-
+<sec:authorize access="hasRole('ROLE_USER')">
+<li class="dropdown">
+		<a href="#"><b>My Account <i class="fa fa-cog fa-lg" aria-hidden="true" data-toggle="tooltip" title="Manage Your Account User: ${username}!"></i></b><b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			<li><a href=""><i class="fa fa fa-user fa-lg" aria-hidden="true"></i> My Profile</a></li>
+			<li><a href="wishList-${k.userId}"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> My WishList!</a></li>
+		</ul>
+</li>
+</sec:authorize>
 
       </ul>
     </div>
@@ -81,7 +88,7 @@
 
 <!-- Top Carousel Starts -->
 
-<div class="container1" style="margin-top:50px;">
+<div class="container1" style="margin-top:120px;">
     <div class="row">
 		<!-- Carousel -->
     	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -107,7 +114,7 @@
 <!--                             </h3> -->
                             <br><br><br><br><br><br>
                             <div class="">
-                                <a class="btn btn-theme btn-sm btn-min-block" href="login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div>
+                                <a class="btn btn-theme btn-sm btn-min-block" href="login">Sign In!</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div>
                               
                         </div>
                     </div><!-- /header-text -->
@@ -127,7 +134,7 @@
 <!--                             </h3> -->
                             <br><br><br><br><br><br>
                             <div class="">
-                             <a class="btn btn-theme btn-sm btn-min-block" href="login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div>
+                             <a class="btn btn-theme btn-sm btn-min-block" href="login">Sign In!</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div>
                         </div>
                     </div><!-- /header-text -->
 			    </div>
@@ -146,7 +153,7 @@
 <!--                             </h3> -->
                             <br><br><br><br><br><br>
                             <div class="">
-                                <a class="btn btn-theme btn-sm btn-min-block" href="login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div> 
+                                <a class="btn btn-theme btn-sm btn-min-block" href="login">Sign In!</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div> 
                         </div>
                     </div><!-- /header-text -->
 			    </div>
@@ -165,7 +172,7 @@
 <!--                             </h3> -->
                             <br><br><br><br><br><br>
                             <div class="">
-                             <a class="btn btn-theme btn-sm btn-min-block" href="login">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div>
+                             <a class="btn btn-theme btn-sm btn-min-block" href="login">Sign In!</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div>
                         </div>
                     </div><!-- /header-text -->
 			    </div>
@@ -252,12 +259,14 @@
               <div class="caption">
               <span class="PropertyName"><strong>{{k.propertyName}}</strong></span>
                 <h4>{{k.propertyId}}</h4>
-                <h5>Starting Rs.{{k.propertyPrice}}Lacs</h5>
-                <h5>{{k.propertyDescription}}</h5>
-<!--                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p> -->
-                <a href="" class="btn btn-default btn-xs pull-right" role="button"><i class="glyphicon glyphicon-edit"></i></a>
-                <a href="viewProperty-{{k.propertyId}}" class="btn btn-info btn-xs" role="button">DETAILS!</a>
-                <a href="shortListProperty-{{k.propertyId}}" class="btn btn-default btn-xs" role="button"> SHORTLIST!</a>
+                <h5>Starting at <b><i class="fa fa-inr" aria-hidden="true" style="color:blue;"></i>{{k.propertyPrice}}Lacs</b></h5>
+                <h5><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:#F50057;"></i> {{k.propertyDescription}}</h5>
+
+                
+                <a href="viewProperty-{{k.propertyId}}" class="btn btn-info btn-md" role="button" data-toggle="tooltip" title="Click to View More Details!"><i class="fa fa-info fa-lgs" aria-hidden="true" style="line-height:0;"></i> <i class="fa fa-eye fa-lg" aria-hidden="true"></i></a>
+                <a href="shortListProperty-{{k.propertyId}}" class="btn btn-warning btn-md" role="button" data-toggle="tooltip" title="Click to Book Right Now!"><i class="fa fa-bolt fa-lg" aria-hidden="true"></i> <i class="fa fa-credit-card fa-lg" aria-hidden="true"></i></a>
+            	<a href="addToWishList-{{k.propertyId}}" class="btn btn-danger btn-md" data-toggle="tooltip" title="Click to Add Property to Wishlist!" role="button"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
+            	<a href="" class="btn btn-success btn-md" data-toggle="tooltip" title="Click to Add Property to Your ShortList!" role="button"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -269,7 +278,7 @@
 <!-- Angular Js script to fetch dynamic values -->
 <script>
 angular.module('myApp', []).controller('myController',function($scope) {
-			$scope.klm = ${listViewproperty};
+			$scope.klm = ${listViewproperty}; ${userList};
 		});
 </script>
 

@@ -57,7 +57,7 @@ public class ShortListedPropertyController {
 	public String deleteShortListedProperty(@PathVariable("propertyId") int propertyId, HttpSession session) {
 		propertyId=(Integer) session.getAttribute("propertyId");
 		propertyService.updtePropertyPlus(propertyId);
-		shortListedPropertyService.deleteShortListedList(propertyId);
+		shortListedPropertyService.deleteShortListedList((Integer) session.getAttribute("shortListedPropertyId"));
 		return "redirect:/home";
 	}
 	

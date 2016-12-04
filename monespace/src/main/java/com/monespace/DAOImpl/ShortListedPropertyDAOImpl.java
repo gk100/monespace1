@@ -54,8 +54,7 @@ public ShortListedProperty shortListedPropertyList(int shortListedPropertyId) {
 			return shortListedList.get(0);
 		} else {
 			return null;
-		}
-		
+		}		
 	}
 	
 	public void deleteShortListedProperty(int propertyId) {

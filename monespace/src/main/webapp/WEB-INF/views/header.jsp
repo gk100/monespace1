@@ -47,7 +47,8 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
-<body ng-app="myApp" ng-controller="myController" background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat; zoom: 1; background-color: burlywood;">
+
+<body ng-app="myApp" ng-controller="myController" background="resources/img/bg_site.png" style="background-size: 100%; background-position: top; background-repeat: no-repeat; zoom: 1; background-color: #5C6BC0;">
 <!-- <img background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat"/> -->
 	
 	<!-- Navbar Starts -->
@@ -83,6 +84,7 @@
 <!-- 					</ul></li> -->
 				<li><a href="aboutUs"><span class="glyphicon glyphicon-info-sign"></span> About Us</a></li>
 				<li><a href="contactUs"><span class="glyphicon glyphicon-earphone"></span> Contact Us</a></li>
+				
 				<sec:authorize access="isAuthenticated()">
 				<sec:authentication property="principal.username" var="username"/>
 				<li><a>Welcome ${username}!</a></li>
@@ -95,15 +97,15 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
-				<li><a href="registerForm"><span class="glyphicon glyphicon-user"></span> Sign Up!</a></li>
+				<li><a href="registerForm"><span class="glyphicon glyphicon-user" data-toggle="tooltip" title="New User? Sign Up Here!"></span></a></li>
 				</c:if>
 				
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
-				<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Sign In!</a></li>
+				<li><a href="login"><span class="glyphicon glyphicon-log-in" data-toggle="tooltip" title="Want to Book Property? Sign In to Your Account Now!"></span></a></li>
 				</c:if>
 				
 				<c:if test="${pageContext.request.userPrincipal.name!=null}">
-				<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Sign Out!</a></li>
+				<li><a href="logout"><span class="glyphicon glyphicon-off" data-toggle="tooltip" title="Enjoyed Shopping? Sign Out!"></span></a></li>
 				</c:if>		
 			</ul>
 		</div>

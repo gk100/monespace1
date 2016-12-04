@@ -1,14 +1,10 @@
 <%@ include file="header.jsp"%>
-<html>
-<head>
-<title>User Detail</title>
-</head>
-<body>
+
 <form:form modelAttribute="userDetail">
 
 <!--  -->
-<div class="container">
-<div class="col-md-5">
+<div class="container" style="margin-top:120px;">
+<div class="col-md-5 col-md-offset-3">
     <div class="form-area">  
         <form role="form">
 <!--         <br style="clear:both"> -->
@@ -25,6 +21,9 @@
 		<div class="form-group"><!--  -->
 		<label for="lastName">Last Name: </label>
 		<form:input type="text" class="form-control" placeholder="Enter Last Name here" path="lastName" /><!--  -->
+		<c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('lastName')}" var="err">
+		<div><span style="color: #ff0000;">${err.text}</span></div>
+		</c:forEach>
 		</div>
 		<div class="form-group"><!--  -->
 		<label for="phoneNumber">Phone Number: </label>
@@ -58,8 +57,8 @@
 		<div><span style="color: #ff0000;">${err.text}</span></div>
 		</c:forEach>
 		</div>
-		<button  name="_eventId_submit" type="submit" class="btn btn-primary pull-right">Submit</button>
-		<button  name="_eventId_cancel" type="submit" class="btn btn-warning">Cancel</button>
+		<button  name="_eventId_submit" type="submit" class="btn btn-success btn-md pull-right">Submit</button>
+		<button  name="_eventId_cancel" type="submit" class="btn btn-danger btn-md">Cancel</button>
 	
         </form>
     </div>
@@ -67,5 +66,4 @@
 </div>
 </form:form><!--  -->
 
-</body>
-</html>
+<%@ include file="footer.jsp"%>

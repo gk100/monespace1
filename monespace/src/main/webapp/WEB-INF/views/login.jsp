@@ -6,7 +6,7 @@
 			<div class="col-lg-4 col-md-3 col-sm-2"></div>
 			<div class="col-lg-4 col-md-6 col-sm-8">
 				<div class="mylogo">
-					<img src="resources/img/MonEspace.png" alt="Logo">
+					<img src="resources/img/MonEspace.png" alt="Logo" style="margin-top:20px; margin-bottom:-90px;">
 				</div>
 
 				<div class="row loginbox">
@@ -15,9 +15,8 @@
 <!-- 					</div> -->
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="form-group">
-							<label for="username">UserName:</label> <i class="glyphicon glyphicon-user"></i><input type="text"
-								class="form-control" id="username" name="username"
-								placeholder="Please enter username" />
+							<label for="username">UserName:</label><i class="glyphicon glyphicon-user"></i>
+							<input type="text" class="form-control" id="username" name="username" placeholder="Please enter username" />
 						</div>
 					</div>
 					<br>
