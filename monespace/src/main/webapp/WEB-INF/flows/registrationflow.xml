@@ -31,14 +31,6 @@
 		<transition on="back" to="start" />
 		<transition on="cancel" to="cancel" />
 	</view-state>
-<!-- 	<action-state id="addRole"> -->
-<!-- 		<evaluate expression="registrationHandler.addRole(flowScope.userDetail,userRole)"/> -->
-<!-- 		<transition on="sucessBuyer" to="buyerDetail"/> -->
-<!-- 		<transition on="sucessDealer" to="dealerDetail"/> -->
-<!-- 		<transition on="failure" to="chooseRole"/> -->
-<!-- 	</action-state> -->
-
-	<!-- DealerDetail -->
 
 	<view-state id="dealerDetail" view="registrationForm3"
 		model="dealer">					<!--dealerForm: registrationForm3.jsp -->
@@ -121,58 +113,6 @@
 		<transition to="success"></transition>
 	</action-state>
 
-
-
-
 	<end-state id="success" view="externalRedirect:contextRelative:/login" />
 	<end-state id="cancel" view="externalRedirect:contextRelative:/home" />
-
-
-
-
-
-
-
-
-
-	<!-- <view-state id="permanentAddress" view="registrationForm2" model="userPermanentAddress"> -->
-	<!-- <transition on="edit" to="confirmDetails1" /> -->
-	<!-- <transition on="submit" to="validate2"/> -->
-	<!-- <transition on="cancel" to="cancel"/> -->
-	<!-- </view-state> -->
-
-	<!-- <action-state id="validate2"> -->
-	<!-- <evaluate expression="registrationHandler.validatePermanentAddress(userDetail,userPermanentAddress,messageContext)"></evaluate> -->
-	<!-- <transition on="success" to="confirmDetails2" /> -->
-	<!-- <transition on="failure" to="start" /> -->
-	<!-- </action-state> -->
-
-	<!-- <view-state id="confirmDetails2" view="confirmForm2" model="userPermanentAddress"> -->
-	<!-- <transition on="edit" to="permanentAddress" /> -->
-	<!-- <transition on="submit" to="billingAddress" /> -->
-	<!-- <transition on="cancel" to="cancel"/> -->
-	<!-- </view-state> -->
-
-	<!-- <view-state id="billingAddress" view="registrationForm3" model="userBillingAddress"> -->
-	<!-- <transition on="edit" to="confirmDetails2"/> -->
-	<!-- <transition on="submit" to="confirmDetails3"/> -->
-	<!-- <transition on="cancel" to="cancel"/> -->
-	<!-- </view-state> -->
-
-	<!-- <action-state id="validate"> -->
-	<!-- <evaluate expression="registrationHandler.validateDetails(userDetail,messageContext)"></evaluate> -->
-	<!-- <transition on="success" to="confirmDetails1" /> -->
-	<!-- <transition on="failure" to="start" /> -->
-	<!-- </action-state> -->
-
-	<!-- <view-state id="confirmDetails3" view="confirmForm3" model="userPermanentAddress"> -->
-	<!-- <transition on="edit" to="billingAddress" /> -->
-	<!-- <transition on="submit" to="success" /> -->
-	<!-- <transition on="cancel" to="cancel"/> -->
-	<!-- </view-state> -->
-
-
-	<!-- <end-state id="success" view="externalRedirect:home"/> -->
-	<!-- <end-state id="cancel" view="externalRedirect:/"/> -->
-
 </flow>

@@ -34,7 +34,7 @@ public class HomeController {
 		
 		model.addAttribute("listDealsCategory", dealsCategoryService.listDealsCategories());
 		model.addAttribute("listDealsCategories", propertyDealsSubCategoryService.propertyDealsSubCategoryList());
-		model.addAttribute("listViewproperty", viewPropertyService.stringViewProperty());
+		model.addAttribute("listViewProperty", viewPropertyService.stringViewProperty());
 		model.addAttribute("userList",userService.userListJson());
 //		model.addAttribute("ShortListedPropertyList");
 		return "home";

@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.monespace.Service.UserService;
 import com.monespace.model.User;
 import com.monespace.model.UserDetail;
-//import com.monespace.model.UserBillingAddress;
-//import com.monespace.model.UserPermanentAddress;
-//import com.monespace.model.UserRole;
 
 @Controller
 public class UserController {
@@ -28,20 +25,7 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping("/registerForm")
-	public String userDetail() {
-//	public String userDetail(Model model) {
-//		UserDetail userDetail = new UserDetail();
-//		UserPermanentAddress userPermanentAddress = new UserPermanentAddress();
-//		UserBillingAddress userBillingAddress = new UserBillingAddress();
-//		UserRole userRole = new UserRole();
-//false>>>	userRole.setUserRoleId(userDetail.getUserRole());
-//		userRole.setUserId(userDetail.getUserId());
-//		
-//		model.addAttribute("userDetail", userDetail);
-//		userDetail.setUserBillingAddress(userBillingAddress);
-//		userDetail.setUserPermanentAddress(userPermanentAddress);
-//		userDetail.setUserRole(userRole);
-		
+	public String userDetail() {	
 		return "redirect:/reg";
 	}
 	
@@ -59,7 +43,6 @@ public class UserController {
 	
 	@RequestMapping("/addUser")
 	public String createUserAction(Model model, @ModelAttribute("user")User user, HttpSession session) {
-//		userService.saveOrUpdateUser(user);
 		session.setAttribute("userId", user.getUserId());
 		session.setAttribute("username", user.getUsername());
 		session.setAttribute("password", user.getPassword());

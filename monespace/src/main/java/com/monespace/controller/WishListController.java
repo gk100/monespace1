@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -72,5 +73,17 @@ public class WishListController {
 		int userId = userService.getUserDetailByName(user).getUserId();
 		wishListService.deleteWishList(wishListId);
 		return "redirect:/wishList-"+userId;
+	}
+	
+	@RequestMapping("/wishList")
+	public String showWishList(Model model, HttpSession session) {
+		Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+		String user=authentication.getName();
+		int userId = userService.getUserDetailByName(user).getUserId();
+		List<WishList> wl= wishListService.listWishList(userId);
+		Gson gson= new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String json= gson.toJson(wl);
+		model.addAttribute("wilshListedList", json);
+		return "wishListedProperty";
 	}
 }

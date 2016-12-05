@@ -1,6 +1,7 @@
 package com.monespace.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -31,38 +32,38 @@ public class ShortListedPropertyController {
 	
 	@Autowired
 	private PropertyService propertyService;
-	
-	
-//		@RequestMapping(value="/deleteShortListedProperty-{shortListedPropertyId}", method=RequestMethod.GET)
-//		public String deleteShortListedList(@PathVariable("shortListedPropertyId") int shortListedPropertyId) {
-//			shortListedPropertyService.deleteShortListedList(shortListedPropertyId);
-//			return "redirect:/";
-//		}
 		
-	@RequestMapping(value="/deleteShortListedProperty")
-	public String deleteShortListedProperty(HttpSession session) {
-		int propertyId = (Integer) session.getAttribute("propertyId");
+//****************************************************************************************************************************	
+	@SuppressWarnings("unchecked")
+	@RequestMapping("/updateFlag")
+	public String updateShortListFlag(HttpSession session) {
+		List<ShortListedProperty> k = (List<ShortListedProperty>) session.getAttribute("listOfShortList");
+		if (k== null || session.getAttribute("checkoutbookNow") == "bookNow") {
+			shortListedPropertyService.updateShortListedPropertyFlag((Integer) session.getAttribute("shortListedPropertyId"));
+		}
+		else {
+			for (ShortListedProperty p : k) {
+				shortListedPropertyService.updateShortListedPropertyFlag(p.getShortListedPropertyId());
+			}
+		}
+		return "redirect:/home";
+	}
+	
+	@RequestMapping(value="/deleteShortListedProperty-{shortListedPropertyId}", method=RequestMethod.GET)
+	public String deleteShortListedProperty(@PathVariable ("shortListedPropertyId") int shortListedPropertyId, HttpSession session) {
+		int propertyId = (Integer) session.getAttribute("propertyId"+shortListedPropertyId);
 		propertyService.updtePropertyPlus(propertyId);
-		shortListedPropertyService.deleteShortListedList((Integer) session.getAttribute("shortListedPropertyId"));
+		shortListedPropertyService.deleteShortListedList(shortListedPropertyId);
 		return "redirect:/home";
 	}
 	
-	@RequestMapping(value="/updateShortListFlag")
-	public String updateShortListedPropertyFlag (HttpSession session) {
-		shortListedPropertyService.updateShortListedPropertyFlag((Integer) session.getAttribute("shortListedPropertyId"));
-		return "redirect:/home";
-	}
 	
-	@RequestMapping(value="/deleteShortListedProperty-{propertyId}",method=RequestMethod.GET)
-	public String deleteShortListedProperty(@PathVariable("propertyId") int propertyId, HttpSession session) {
-		propertyId=(Integer) session.getAttribute("propertyId");
-		propertyService.updtePropertyPlus(propertyId);
-		shortListedPropertyService.deleteShortListedList((Integer) session.getAttribute("shortListedPropertyId"));
-		return "redirect:/home";
-	}
-	
+	/***************************************************************************************************************************/
 	@RequestMapping("/shortListProperty-{propertyId}")
 	public String addToBookNow(@ModelAttribute("shortListedProperty") ShortListedProperty shortListedProperty, @PathVariable("propertyId") int propertyId, Model model, HttpSession session) {
+		if (propertyService.getPropertyById(propertyId).getQuantity()<=0) {
+			return "redirect:/home";
+		}
 		Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
 		String user=authentication.getName();
 		int userId = userService.getUserDetailByName(user).getUserId();
@@ -70,8 +71,10 @@ public class ShortListedPropertyController {
 		shortListedProperty.setShortListId(userId);
 		shortListedProperty.setFlag(false);
 		shortListedProperty.setPropertyId(propertyId);
-		session.setAttribute("propertyId", propertyId);
-		propertyId=(Integer) session.getAttribute("propertyId");
+		
+//		session.setAttribute("propertyId", propertyId);
+//		propertyId=(Integer) session.getAttribute("propertyId");
+		
 		shortListedProperty.setPropertyName(propertyService.getPropertyById(propertyId).getPropertyName());
 		shortListedProperty.setPropertyPrice(propertyService.getPropertyById(propertyId).getPropertyPrice());
 		shortListedProperty.setRate(propertyService.getPropertyById(propertyId).getPropertyPrice());
@@ -81,13 +84,18 @@ public class ShortListedPropertyController {
 		shortListedProperty.setPropertyDiscount(propertyService.getPropertyById(propertyId).getPropertyDiscount());
 		shortListedProperty.setQuantity(1);
 		shortListedPropertyService.createPropertyShortList(shortListedProperty);
+		
 		propertyService.updatePropertyMinus(propertyId);
+		
 		session.setAttribute("shortListedPropertyId", shortListedProperty.getShortListedPropertyId());
+		session.setAttribute("propertyId"+shortListedProperty.getShortListedPropertyId(), shortListedProperty.getPropertyId());
+		
 		return "redirect:/shortListPropertyList-"+shortListedProperty.getShortListedPropertyId();
 	}
 	
 	@RequestMapping("/shortListPropertyList-{shortListedPropertyId}")
-	public String propertyListBuyNow(Model model, @PathVariable("shortListedPropertyId")int shortListedPropertyId) {
+	public String propertyListBookNow(Model model, @PathVariable("shortListedPropertyId")int shortListedPropertyId, HttpSession session) {
+		session.setAttribute("checkoutbookNow", "bookNow");
 		ShortListedProperty sp= shortListedPropertyService.shortListedPropertyList(shortListedPropertyId);
 		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String json=gson.toJson(sp);
@@ -102,5 +110,74 @@ public class ShortListedPropertyController {
 		int userId= userService.getUserDetailByName(user).getUserId();
 		session.setAttribute("userId", userId);
 		return "redirect:/check?userId="+userId;
+		//return "redirect:/shortList"
+	}
+	/**************************************************************************************************/
+	
+	@RequestMapping("/addShortList-{propertyId}")
+	public String addToShortList(@ModelAttribute ("shortListedProperty") ShortListedProperty shortListedProperty,@PathVariable("propertyId") int propertyId, Model model, HttpSession session) {
+		if (propertyService.getPropertyById(propertyId).getQuantity()<=0) {
+			return "redirect:/home";
+		}
+		
+		Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+		String user=authentication.getName();
+		int userId = userService.getUserDetailByName(user).getUserId();
+		shortListedProperty.setUserId(userId);
+		shortListedProperty.setShortListId(userId);
+		shortListedProperty.setFlag(false);
+		shortListedProperty.setPropertyId(propertyId);
+		
+//		session.setAttribute("propertyId", propertyId);
+//		propertyId=(Integer) session.getAttribute("propertyId");
+		
+		shortListedProperty.setPropertyName(propertyService.getPropertyById(propertyId).getPropertyName());
+		shortListedProperty.setPropertyPrice(propertyService.getPropertyById(propertyId).getPropertyPrice());
+		shortListedProperty.setRate(propertyService.getPropertyById(propertyId).getPropertyPrice());
+		shortListedProperty.setPropertyDescription(propertyService.getPropertyById(propertyId).getPropertyDescription());
+		Date systemdate=new Date();
+		shortListedProperty.setOrderDate(systemdate);
+		shortListedProperty.setPropertyDiscount(propertyService.getPropertyById(propertyId).getPropertyDiscount());
+		shortListedProperty.setQuantity(1);
+		shortListedPropertyService.createPropertyShortList(shortListedProperty);
+		
+		propertyService.updatePropertyMinus(propertyId);
+		
+		session.setAttribute("shortListedPropertyId", shortListedProperty.getShortListedPropertyId());
+		session.setAttribute("propertyId"+shortListedProperty.getShortListedPropertyId(), shortListedProperty.getPropertyId());
+		
+		return "redirect:/listOfShortList";
+	}
+	
+	@RequestMapping("/listOfShortList")
+	public String ListOfShortList(Model model,HttpSession session) {
+		session.setAttribute("checkoutbookNow", "listOfShortList");
+		Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+		String user=authentication.getName();
+		int userId = userService.getUserDetailByName(user).getUserId();
+		List<ShortListedProperty> sp= shortListedPropertyService.listOfShortList(userId);
+		session.setAttribute("listOfShortList", sp);
+		for (ShortListedProperty k: sp) {
+			session.setAttribute("propertyId"+k.getShortListedPropertyId(), k.getPropertyId());
+		}
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String json=gson.toJson(sp);
+		model.addAttribute("listOfShortList", json);
+		return "shortListedProperties";
+	}
+	
+	@RequestMapping("/confirmedList")
+	public String confirmedList(Model model, HttpSession session) {
+		Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+		String user=authentication.getName();
+		int userId = userService.getUserDetailByName(user).getUserId();
+		List<ShortListedProperty> sp=shortListedPropertyService.confirmedList(userId);
+		for (ShortListedProperty k: sp) {
+			session.setAttribute("propertyId"+k.getShortListedPropertyId(), k.getPropertyId());
+		}
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String json = gson.toJson(sp);
+		model.addAttribute("confirmedList",json);
+		return "confirmedDeals";
 	}
 }

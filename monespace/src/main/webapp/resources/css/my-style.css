@@ -12,8 +12,8 @@
 /* @import url(http://fonts.googleapis.com/css?family=Fjalla+One); */
 /* @import url(http://fonts.googleapis.com/css?family=Gudea); */
 .footer1 {
-    background: rgba(217, 237, 247, 0.64) url("../images/footer/footer-bg.png") repeat scroll left top;
-    background-color: #303F9F;
+    background: rgba(217, 237, 247, 0.64) url("resources/img/City_Skyline-optmized.png") repeat scroll left top;
+    background-color: #E0F7FA;
 	padding-top: 40px;
 	padding-right: 0;
 	padding-bottom: 20px;
@@ -111,7 +111,7 @@
 /********************************* Only Needed in Multi-Coloured Variation************************/
 			
 			.social-fb:hover {
-				color: #C5CAE9;
+				color: #3F51B5;
 				/*#3B5998;*/
 			}
 			.social-tw:hover {

@@ -28,6 +28,12 @@ public class HousingWebPage {
 		return "welcome";
 	}
 	
+	@RequestMapping("/403")
+	public String unAuthaurizedaccess() {
+		return "403";
+	}
+	
+	
 //	@RequestMapping("/home")
 //	public String goToHomePage() {
 //		return "home";

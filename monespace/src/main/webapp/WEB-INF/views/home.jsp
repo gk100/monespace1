@@ -74,8 +74,9 @@
 <li class="dropdown">
 		<a href="#"><b>My Account <i class="fa fa-cog fa-lg" aria-hidden="true" data-toggle="tooltip" title="Manage Your Account User: ${username}!"></i></b><b class="caret"></b></a>
 		<ul class="dropdown-menu">
-			<li><a href=""><i class="fa fa fa-user fa-lg" aria-hidden="true"></i> My Profile</a></li>
-			<li><a href="wishList-${k.userId}"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> My WishList!</a></li>
+<!-- 		<li><a href=""><i class="fa fa fa-user fa-lg" aria-hidden="true"></i> My Profile</a></li> -->
+			<li><a href="wishList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> My WishList!</a></li>
+			<li><a href="confirmedList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Confirmed List!</a></li>
 		</ul>
 </li>
 </sec:authorize>
@@ -257,16 +258,16 @@
           <div class="thumbnail">
             <img Style= "height:250px; width:400px;" src="resources/img/{{k.propertyId}}.jpg">
               <div class="caption">
-              <span class="PropertyName"><strong>{{k.propertyName}}</strong></span>
-                <h4>{{k.propertyId}}</h4>
-                <h5>Starting at <b><i class="fa fa-inr" aria-hidden="true" style="color:blue;"></i>{{k.propertyPrice}}Lacs</b></h5>
-                <h5><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:#F50057;"></i> {{k.propertyDescription}}</h5>
+              <span class="PropertyName"><strong>{{k.propertyName}}</strong></span><hr>
+<!--            <h4>{{k.propertyId}}</h4> -->
+                <h5>Starting at <b><i class="fa fa-inr" aria-hidden="true" style="color:blue;"></i>{{k.propertyPrice}}</b></h5>
+                <h5><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:#F50057;"></i> {{k.propertyDescription}}</h5><hr>
 
                 
                 <a href="viewProperty-{{k.propertyId}}" class="btn btn-info btn-md" role="button" data-toggle="tooltip" title="Click to View More Details!"><i class="fa fa-info fa-lgs" aria-hidden="true" style="line-height:0;"></i> <i class="fa fa-eye fa-lg" aria-hidden="true"></i></a>
                 <a href="shortListProperty-{{k.propertyId}}" class="btn btn-warning btn-md" role="button" data-toggle="tooltip" title="Click to Book Right Now!"><i class="fa fa-bolt fa-lg" aria-hidden="true"></i> <i class="fa fa-credit-card fa-lg" aria-hidden="true"></i></a>
             	<a href="addToWishList-{{k.propertyId}}" class="btn btn-danger btn-md" data-toggle="tooltip" title="Click to Add Property to Wishlist!" role="button"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
-            	<a href="" class="btn btn-success btn-md" data-toggle="tooltip" title="Click to Add Property to Your ShortList!" role="button"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></a>
+            	<a href="addShortList-{{k.propertyId}}" class="btn btn-success btn-md" data-toggle="tooltip" title="Click to Add Property to Your ShortList!" role="button"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -278,7 +279,7 @@
 <!-- Angular Js script to fetch dynamic values -->
 <script>
 angular.module('myApp', []).controller('myController',function($scope) {
-			$scope.klm = ${listViewproperty}; ${userList};
+			$scope.klm = ${listViewProperty}; $scope.abc= ${userList};
 		});
 </script>
 

@@ -1,11 +1,11 @@
 <%@ include file="header.jsp"%>
 
-<a href="deleteShortListedProperty-{{klm.propertyId}}" ><button  name="Cancel" class="btn btn-warning btn-lg home col-md-offset-1"
+<a href="deleteShortListedProperty-{{klm.shortListedPropertyId}}" ><button  name="Cancel" class="btn btn-warning btn-lg home col-md-offset-1"
 	Style="background-color:red; margin-top:120px; padding: 10px 16px; font-size: 18px; line-height: 0;">
 	Cancel</button></a>
 <a href="checkout"><button name="Submit" type="submit" class="btn btn-primary btn-lg welcome col-md-offset-7"
 	Style= "background-color:green; margin-top:120px; padding: 10px 16px; font-size: 18px; line-height: 0;">
-	Confirm to Book Now!</button></a>
+	Click to Confirm Deal!</button></a>
 
 <hr>
 
@@ -27,9 +27,6 @@
 <!--  	<a href="checkout" class="btn btn-info btn-xs" role="button" Style= "background-color:green;">Confirm and CheckOut!</a> -->
 <!--  	<a href="deleteShortListedProperty-{{klm.propertyId}}" class="btn btn-info btn-xs" role="button" Style="background-color:red;">Cancel</a> -->
 </div>	
-
-
-
 
 
 

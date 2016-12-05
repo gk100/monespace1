@@ -1,5 +1,5 @@
 <!--footer starts-->
-<footer class="footer1">
+<footer class="footer1" background= "resources/img/City_Skyline-optmized.png"  style="background-color: #1A237E;">
 <div class="container">
 	
 <div class="row"><!-- row -->            

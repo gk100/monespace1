@@ -17,16 +17,21 @@
 		<concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/>
 	</session-management> -->
 		<intercept-url pattern="/home" access="permitAll" />
-		<intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+		<intercept-url pattern="/login" access="permitAll"/>
 		<intercept-url pattern="/reg" access="hasRole('ROLE_ANONYMOUS')"/>
-<!-- 	<intercept-url pattern="/login" access="hasRole('ROLE_ANONYMOUS')"/> -->
-		<intercept-url pattern="/dealer" access="hasAnyRole('ROLE_DEALER', 'ROLE_ADMIN')"/>
-		<intercept-url pattern="/property" access="hasAnyRole('ROLE_DEALER', 'ROLE_ADMIN')"/>
+		
+<!-- 	<intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/> -->
 		<intercept-url pattern="/category" access="hasRole('ROLE_ADMIN')"/>
 		<intercept-url pattern="/subCategories" access="hasRole('ROLE_ADMIN')"/>
+		
+		<intercept-url pattern="/dealer" access="hasAnyRole('ROLE_DEALER', 'ROLE_ADMIN')"/>
+		<intercept-url pattern="/property" access="hasAnyRole('ROLE_DEALER', 'ROLE_ADMIN')"/>
+		
 		<intercept-url pattern="/shortListProperty-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
 		<intercept-url pattern="/addToWishList-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
-		<intercept-url pattern="/wishList-{{k.userId}}" access="hasRole('ROLE_USER')"/>
+		<intercept-url pattern="/viewProperty-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
+		<intercept-url pattern="/addShortList-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
+		
 		<access-denied-handler error-page="/403"/>
 		<form-login 
 		login-page="/login" 

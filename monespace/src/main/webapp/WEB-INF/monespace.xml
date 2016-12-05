@@ -80,4 +80,5 @@
 	<bean id="wishListService" class="com.monespace.Service.WishListService"></bean>
 	<bean id="wishListDAOImpl" class="com.monespace.DAOImpl.WishListDAOImpl"></bean>
 	
+	
 </beans>

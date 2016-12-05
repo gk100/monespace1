@@ -121,7 +121,7 @@ public class PropertyController {
 		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String g = gson.toJson(vp);
 		ModelAndView modelAndView = new ModelAndView("viewProperty");
-		modelAndView.addObject("listViewproperty", g);
+		modelAndView.addObject("listViewProperty", g);
 		return modelAndView;
 	}
 

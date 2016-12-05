@@ -83,6 +83,7 @@
 	</view-state>
 	
 	
-	<end-state id="success" view="externalRedirect:contextRelative:/updateShortListFlag" />
-	<end-state id="cancel" view="externalRedirect:contextRelative:/deleteShortListedProperty" />
+	<!--  <end-state id="success" view="externalRedirect:contextRelative:/updateShortListFlag" />-->
+	<end-state id="success" view="externalRedirect:contextRelative:/updateFlag"/>
+	<end-state id="cancel" view="externalRedirect:contextRelative:/home" />
 	</flow>

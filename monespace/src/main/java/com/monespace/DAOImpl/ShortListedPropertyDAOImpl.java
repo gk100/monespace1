@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.monespace.DAO.ShortListedPropertyDAO;
 import com.monespace.model.ShortListedProperty;
-//import com.google.gson.Gson;
-//import com.google.gson.GsonBuilder;
+
 
 
 @Repository
@@ -68,4 +67,22 @@ public ShortListedProperty shortListedPropertyList(int shortListedPropertyId) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().createQuery("update ShortListedProperty set flag=true where shortListedPropertyId="+shortListedPropertyId).executeUpdate();	
 	}
+
+	@SuppressWarnings("unchecked")
+	public List<ShortListedProperty> listOfShortList(int userId) {
+		// TODO Auto-generated method stub
+		String query = "from ShortListedProperty where userId="+userId +" and flag = false";
+		List<ShortListedProperty> shortlistedlist= sessionFactory.getCurrentSession().createQuery(query).getResultList();
+		return shortlistedlist;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<ShortListedProperty> confirmedList(int userId) {
+		// TODO Auto-generated method stub
+		String query = "from ShortListedProperty where userId="+userId +" and flag = true";
+		List<ShortListedProperty> shortlistedlist = sessionFactory.getCurrentSession().createQuery(query).getResultList();
+		return shortlistedlist;
+	}
+	
+	
 }

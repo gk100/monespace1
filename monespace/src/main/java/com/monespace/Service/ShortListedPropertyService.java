@@ -1,5 +1,7 @@
 package com.monespace.Service;
 
+import java.util.List;
+
 //import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +51,15 @@ public class ShortListedPropertyService {
 	@Transactional
 	public void updateShortListedPropertyFlag(int propertyId) {
 		shortListedPropertyDAOImpl.updateShortListedPropertyFlag(propertyId);
+	}
+	
+	@Transactional
+	public List<ShortListedProperty> listOfShortList(int userId) {
+		return shortListedPropertyDAOImpl.listOfShortList(userId);
+	}
+	
+	@Transactional
+	public List<ShortListedProperty> confirmedList(int userId) {
+		return shortListedPropertyDAOImpl.confirmedList(userId);
 	}
 }

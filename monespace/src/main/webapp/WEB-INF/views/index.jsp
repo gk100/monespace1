@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="redirect:/">
+                <a class="navbar-brand" href="http://localhost:8080/monespace/">
                     <img src="resources/img/MonEspace!.png" style="height:100%;">
 <!--                     <img src="http://placehold.it/150x50&text=Logo" alt=""> -->
                 </a>

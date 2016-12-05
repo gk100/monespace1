@@ -48,12 +48,12 @@
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 
-<body ng-app="myApp" ng-controller="myController" background="resources/img/bg_site.png" style="background-size: 100%; background-position: top; background-repeat: no-repeat; zoom: 1; background-color: #5C6BC0;">
+<body ng-app="myApp" ng-controller="myController" background="resources/img/bg_site.png" style="background-size: 100%; background-position: top; background-repeat: no-repeat; zoom: 1; background-color: #C5CAE9;">
 <!-- <img background="resources/img/bg_site.png" style="background-position: top; background-repeat: no-repeat"/> -->
 	
 	<!-- Navbar Starts -->
 	
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-transparent">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -97,15 +97,15 @@
 
 			<ul class="nav navbar-nav navbar-right">
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
-				<li><a href="registerForm"><span class="glyphicon glyphicon-user" data-toggle="tooltip" title="New User? Sign Up Here!"></span></a></li>
+				<li><a href="registerForm"><span class="glyphicon glyphicon-user" data-toggle="tooltip" title="New User? Sign Up Here!"> SignUp</span></a></li>
 				</c:if>
 				
 				<c:if test="${pageContext.request.userPrincipal.name==null}">
-				<li><a href="login"><span class="glyphicon glyphicon-log-in" data-toggle="tooltip" title="Want to Book Property? Sign In to Your Account Now!"></span></a></li>
+				<li><a href="login"><span class="glyphicon glyphicon-log-in" data-toggle="tooltip" title="Want to Book Property? Sign In to Your Account Now!"> SignIn</span></a></li>
 				</c:if>
 				
 				<c:if test="${pageContext.request.userPrincipal.name!=null}">
-				<li><a href="logout"><span class="glyphicon glyphicon-off" data-toggle="tooltip" title="Enjoyed Shopping? Sign Out!"></span></a></li>
+				<li><a href="logout"><span class="glyphicon glyphicon-off" data-toggle="tooltip" title="Enjoyed Shopping? Sign Out!" style="line-height:1;""><b> SignOut</b></span></a></li>
 				</c:if>		
 			</ul>
 		</div>
