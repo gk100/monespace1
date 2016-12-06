@@ -59,10 +59,11 @@
                             <h1 class="title-widget" style="color: #0091EA;"><b><i>Contact Details </i></b></h1>                                
                             <div class="footerp">                                
                             <h2 class="title-median" style="color: #84FFFF;"><i>Mon Espace! Pvt. Ltd.</i></h2>
-                            <p style="color: #f5f5f5;"><b>Email id:</b> <a href="#" style="color: #84FFFF;">info@monespace.com</a></p>
+                            <p style="color: #f5f5f5;"><b>Email id:</b> <a href="https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1" style="color: #84FFFF;">info@monespace.com</a></p>
                             <p style="color: #f5f5f5;"><b>Customer Support </b>
     <b style="color:#ffc106;">(8AM to 10PM):</b>  +91-1234567890, +91-9876543210  </p>    
     <p style="color: #f5f5f5;"><b>Corp Office / Postal Address</b></p>
+    <p style="color: #ffc106;"><b>216, Netaji Subhash Chandra Bose Rd, Churchgate, Mumbai, Maharashtra 400021</b>
     <p style="color: #f5f5f5;"><b>Phone Numbers : </b>9874563210, </p>
     <p style="color: #f5f5f5;"> 022-7894561230, 9485761230</p>
                                 </div>

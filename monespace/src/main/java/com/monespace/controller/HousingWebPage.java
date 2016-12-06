@@ -33,10 +33,4 @@ public class HousingWebPage {
 		return "403";
 	}
 	
-	
-//	@RequestMapping("/home")
-//	public String goToHomePage() {
-//		return "home";
-//	}
-
 }

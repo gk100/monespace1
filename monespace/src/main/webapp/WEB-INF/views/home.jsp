@@ -74,9 +74,9 @@
 <li class="dropdown">
 		<a href="#"><b>My Account <i class="fa fa-cog fa-lg" aria-hidden="true" data-toggle="tooltip" title="Manage Your Account User: ${username}!"></i></b><b class="caret"></b></a>
 		<ul class="dropdown-menu">
-<!-- 		<li><a href=""><i class="fa fa fa-user fa-lg" aria-hidden="true"></i> My Profile</a></li> -->
-			<li><a href="wishList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> My WishList!</a></li>
-			<li><a href="confirmedList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Confirmed List!</a></li>
+			<li><a href="listOfShortList"><i class="fa fa fa-user fa-lg" aria-hidden="true"></i> ShortList</a></li>
+			<li><a href="wishList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> WishList</a></li>
+			<li><a href="confirmedList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Transaction History</a></li>
 		</ul>
 </li>
 </sec:authorize>
@@ -260,7 +260,7 @@
               <div class="caption">
               <span class="PropertyName"><strong>{{k.propertyName}}</strong></span><hr>
 <!--            <h4>{{k.propertyId}}</h4> -->
-                <h5>Starting at <b><i class="fa fa-inr" aria-hidden="true" style="color:blue;"></i>{{k.propertyPrice}}</b></h5>
+                <h5>Starting at <b><i class="fa fa-inr" aria-hidden="true" style="color:green;"></i>{{k.propertyPrice}}</b></h5>
                 <h5><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:#F50057;"></i> {{k.propertyDescription}}</h5><hr>
 
                 

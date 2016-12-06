@@ -26,8 +26,6 @@ public class HomeController {
 	@Autowired
 	private UserService userService;
 	
-//	@Autowired
-//	private ShortListedPropertyService shortListedPropertyService;
 	
 	@RequestMapping("/home")
 	public String Hompage(Model model) {
@@ -36,7 +34,6 @@ public class HomeController {
 		model.addAttribute("listDealsCategories", propertyDealsSubCategoryService.propertyDealsSubCategoryList());
 		model.addAttribute("listViewProperty", viewPropertyService.stringViewProperty());
 		model.addAttribute("userList",userService.userListJson());
-//		model.addAttribute("ShortListedPropertyList");
 		return "home";
 	}
 }

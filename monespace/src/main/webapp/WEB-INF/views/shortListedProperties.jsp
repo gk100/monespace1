@@ -13,35 +13,49 @@
 	<br>
 	<!-- Search Bar ends -->
 	
-<h1 style="margin-top:50px; text-align:center; color:#880E4F"><i>My ShortList!</i></h1>	
+<h1 style="margin-top:50px; text-align:center; color:#880E4F"><i>Add Property To ShortList!</i></h1>	
 <div class="container" >
 <div class="table-responsive">
 <table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Category Name </th>
-					<th>property Description</th>
-					<th>Property Price:</th>
-					<th>Rate:</th>
+					<th>#</th>
+					<th>flag</th>
+					<th><i class="fa fa-building" aria-hidden="true"></i> Property</th>
+					<th><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:#F50057;"></i> Location</th>
+					<th>Price (in <i class="fa fa-inr" aria-hidden="true" style="color:green;"></i>)</th>
+					<th>Rate  (in <i class="fa fa-inr" aria-hidden="true" style="color:green;"></i> /sq.Ft.)</th>
+					<th>Registration Fees To Book Property/Properties (in <i class="fa fa-inr" aria-hidden="true" style="color:green;"></i>)</th>
 					
-					<th>Image</th>
+					<th><i class="fa fa-picture-o" aria-hidden="true"></i> Image</th>
 					<th>
-					<a class="btn btn-info btn-sm btn-danger" data-toggle="tooltip" title="Delete Category!">
-					<span class="glyphicon glyphicon-trash"></span> DELETE</a>
+					<a class="btn btn-info btn-sm btn-danger"><span class="glyphicon glyphicon-trash"></span> Remove</a>
 					</th>
 				</tr>
 			</thead>
-				<tr ng-repeat="k in klm | filter: test">
+				<tr ng-repeat="k in resultValue=(klm | filter: test)">
+					<td>{{k.shortListedPropertyId}}</td>
+					<td>{{k.flag}}</td>
 					<td>{{k.propertyName}}</td>
 					<td>{{k.propertyDescription}}</td>
-					<td>{{k.propertyPrice}}</td>
+					<td>{{k.propertyPrice}}/-</td>
 					<td>{{k.rate}}</td>
+					<td>{{k.propertyPrice * 0.05}}/-</td>
 					
 					<td><img src="resources/img/{{k.propertyId}}.jpg" width="100" height="100"></td>
 					<td>
 					<a href="deleteShortListedProperty-{{k.shortListedPropertyId}}" data-toggle="tooltip" title="Click to Delete WishListed Property!">
 					<span class="glyphicon glyphicon-trash" style="color: #F44336;"></span></a>
 					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>GRAND TOTAL</td>
+					<td>{{resultValue |totalAmount: 'propertyPrice'}}</td>
 				</tr>
 </table>
 </div>
@@ -55,7 +69,20 @@
 	
 
 	<script>
-angular.module('myApp', []).controller('myController',function($scope) {
+	var app = angular.module ('myApp', []).filter('totalAmount',function() {
+		return function(data, key1, key2) {
+			if (typeof (data) ==='undefined' && typeof (key1) === 'undefined') {
+				return 0;
+			}
+			var sum = 0;
+			for (var i=0; i<data.length; i++) {
+				sum = sum + (parseInt(data[i][key1]) * 0.05);
+			}
+			return sum;
+		}
+	});
+	
+app.controller('myController',function($scope) {
 			$scope.klm = ${listOfShortList};
 		});
 
