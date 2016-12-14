@@ -40,13 +40,13 @@
 					<label for="city" style="color: #0b0b3a;">City:</label>
 					<form:input type="text" class="form-control" placeholder="Enter City" path="city" />
 				</div>
-				<div class="form-group" style="color: #0b0b3a;">
-					<label for="state">State:</label>
+				<div class="form-group">
+					<label for="state" style="color: #0b0b3a;">State:</label>
 					<form:input type="text" class="form-control" placeholder="Enter State" path="state" />
 				</div>
-				<div class="form-group" style="color: #0b0b3a;">
-					<label for="pincode">Pincode:</label>
-					<form:input type="text" class="form-control" placeholder="Enter State" path="pincode" />
+				<div class="form-group">
+					<label for="pincode" style="color: #0b0b3a;">Pincode:</label>
+					<form:input type="text" class="form-control" placeholder="Enter Pincode" path="pincode" />
 				</div>
 		<button name="_eventId_back" type="submit" class="btn btn-lg btn-warning btn-inline left" style="line-height: 0; margin-top:-10px;" value="Back">Back</button>
 		<button name="_eventId_cancel" type="submit" class="btn  btn-lg btn-danger btn-inline center" style="line-height: 0; margin-top:-10px;" value="Cancel">Cancel</button>

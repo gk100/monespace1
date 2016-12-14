@@ -1,8 +1,11 @@
 package com.monespace.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,14 +34,20 @@ public class PropertyDealsSubCategoryController {
 		return "subCategories";
 	}
 	
-	@RequestMapping("/add/subCategories")
-	public String addPropertyDealsSubCategory(@ModelAttribute("propertyDealsSubCategory")PropertyDealsSubCategory propertyDealsSubCategory){
+	@RequestMapping("/addSubCategories")
+	public String addPropertyDealsSubCategory(@Valid @ModelAttribute("propertyDealsSubCategory")PropertyDealsSubCategory propertyDealsSubCategory, BindingResult result, Model model){
 		DealsCategory dealsCategory= dealsCategoryService.getIdFromName(propertyDealsSubCategory.getDealsCategory().getdealsCategoryName());
 		dealsCategoryService.createDealsCategory(dealsCategory);
 		propertyDealsSubCategory.setDealsCategory(dealsCategory);
 		propertyDealsSubCategory.setDealsCategoryId(dealsCategory.getdealsCategoryId());
+		if (result.hasErrors()) {
+			model.addAttribute("listSubCategory", this.propertyDealsSubCategoryService.propertyDealsSubCategoryListJson());
+			return "subCategories";
+		}
+		else {
 		this.propertyDealsSubCategoryService.createPropertyDealsSubCategory(propertyDealsSubCategory);
 		return "redirect:/subCategories";
+		}
 	}
 	
 	@RequestMapping(value= "/editSubCategory-{propertyDealsSubCategoryId}", method= RequestMethod.GET)

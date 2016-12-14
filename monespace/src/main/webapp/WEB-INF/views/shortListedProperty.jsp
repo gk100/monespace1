@@ -75,10 +75,12 @@
 </table>
 </div>
 </div>
-
-<a href="checkout"><button name="Submit" type="submit" class="btn btn-primary btn-lg welcome col-md-offset-9"
+<a href="deleteShortListedProperty-{{klm.shortListedPropertyId}}"><button name="Submit" type="submit" class="btn btn-primary btn-lg col-md-offset-9"
+	Style= "background-color:red; margin-bottom: 10px; padding: 10px 16px; font-size: 18px; line-height: 0;">
+	Cancel Deal!</button></a>
+<a href="checkout"><button name="Submit" type="submit" class="btn btn-primary btn-lg welcome"
 	Style= "background-color:green; margin-bottom: 10px; padding: 10px 16px; font-size: 18px; line-height: 0;">
-	Click to Confirm Deal!</button></a>	
+	Confirm Deal!</button></a>	
 
 	
 <script>

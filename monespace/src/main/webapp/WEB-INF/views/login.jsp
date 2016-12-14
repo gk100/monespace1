@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="col-lg-4 col-md-3 col-sm-2"></div>
 			<div class="col-lg-4 col-md-6 col-sm-8">
-				<div class="mylogo">
+				<div class="mylogo img-responsive">
 					<img src="resources/img/MonEspace.png" alt="Logo" style="margin-top:20px; margin-bottom:-90px;">
 				</div>
 

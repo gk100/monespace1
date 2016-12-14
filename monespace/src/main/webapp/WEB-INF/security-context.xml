@@ -30,6 +30,7 @@
 		<intercept-url pattern="/shortListProperty-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
 		<intercept-url pattern="/addToWishList-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
 		<intercept-url pattern="/viewProperty-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
+		<intercept-url pattern="/viewPropertyContactDetail-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
 		<intercept-url pattern="/addShortList-{{k.propertyId}}" access="hasRole('ROLE_USER')"/>
 		
 		<access-denied-handler error-page="/403"/>

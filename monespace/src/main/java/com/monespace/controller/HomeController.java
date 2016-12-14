@@ -33,7 +33,7 @@ public class HomeController {
 		model.addAttribute("listDealsCategory", dealsCategoryService.listDealsCategories());
 		model.addAttribute("listDealsCategories", propertyDealsSubCategoryService.propertyDealsSubCategoryList());
 		model.addAttribute("listViewProperty", viewPropertyService.stringViewProperty());
-		model.addAttribute("userList",userService.userListJson());
+//		model.addAttribute("userList",userService.userListJson());
 		return "home";
 	}
 }

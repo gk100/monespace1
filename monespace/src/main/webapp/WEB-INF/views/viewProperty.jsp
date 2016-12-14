@@ -110,7 +110,7 @@
 <br>
 <script>
 angular.module('myApp', []).controller('myController',function($scope) {
-			$scope.klm = ${listViewproperty};
+			$scope.klm = ${listViewProperty};
 		});
 
 </script>

@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.google.gson.annotations.Expose;
 
@@ -22,10 +22,10 @@ public class DealsCategory implements Serializable {
 	@Expose
 	private int dealsCategoryId;
 	@Expose
-	@NotNull(message="Category Name Should not be Empty")
+	@NotEmpty(message="This Field Should not be Empty")
 	private String dealsCategoryName;
 	@Expose
-	@NotNull(message="Category Description Should not be Empty")
+	@NotEmpty(message="Description Field Should not be Empty")
 	private String dealsCategoryDescription;
 
 	//for dynamic display

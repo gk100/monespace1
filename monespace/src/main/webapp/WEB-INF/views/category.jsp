@@ -35,17 +35,19 @@
 <div class="container" style="margin-top:10px;">
 		<h2><b>Manage Category</b></h2>
 
-			<form:form method="POST" action="add/category" modelAttribute="dealsCategory">
+			<form:form method="POST" action="addcategory" modelAttribute="dealsCategory">
 			<form:input path="dealsCategoryId" hidden="true" />
   
 			<div class="form-group">
   			<div class="col-xs-6">
   				<label for="dealsCategoryName"><b>Deal Name:</b></label>
-  				<form:input class="form-control input border light-grey " type="text" path="dealsCategoryName" placeholder="Enter type of Deal i.e. Buy, Sell, etc."/>
+  				<form:input class="form-control input border light-grey " maxlength="55" autocomplete="off" type="text" path="dealsCategoryName" placeholder="Enter type of Deal i.e. Buy, Sell, etc."/>
+				<form:errors path="dealsCategoryName" style="color:red;"/>
 			</div>
 			<div class="col-xs-6">
   				<label for="dealsCategoryDescription"><b>Description:</b></label>
-  				<form:input class="form-control input border light-grey" type="text" path="dealsCategoryDescription" placeholder="Enter Description about the Deal"/>
+  				<form:input class="form-control input border light-grey" type="text" maxlength="100" autocomplete="off" path="dealsCategoryDescription" placeholder="Enter Description about the Deal"/>
+  				<form:errors path="dealsCategoryDescription" style="color:red;"/>
   			</div>
  			<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Category From Here!">Submit</button>
 			

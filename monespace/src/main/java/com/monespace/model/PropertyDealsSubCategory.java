@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.google.gson.annotations.Expose;
 
 @SuppressWarnings("serial")
@@ -22,6 +24,7 @@ public class PropertyDealsSubCategory implements Serializable {
 	@Expose
 	private int propertyDealsSubCategoryId;
 	@Expose
+	@NotEmpty(message="This Field Should not be Empty")
 	private String propertyType;
 	@Expose
 	private int dealsCategoryId;

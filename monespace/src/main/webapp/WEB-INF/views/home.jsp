@@ -1,14 +1,14 @@
 <%@ include file="header.jsp"%>
 <div id="navbar">
-  <nav class="navbar navbar-default col-lg-10 col-md-offset-1" role="navigation" style="margin-top:-20px;">
-    <div class="navbar-header">
+  <nav class="navbar navbar-default col-lg-12" role="navigation" style="margin-top:-20px;background-color: #FFC107; border-color: #FFC107;">
+    <div class="navbar-header col-md-offset-2">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Explore Your Property Here Now!</a>
+      <a class="navbar-brand" href="#" style="line-height: 20px; color:#0b0b3a; background-color: #FFC107; border-color: #FFC107;">Explore For Properties Here!</a>
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -19,7 +19,7 @@
         <sec:authorize access="permitAll">
         <c:forEach items="${listDealsCategory}" var="d">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">${d.dealsCategoryName} <b class="caret"></b></a> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: #0b0b3a;">${d.dealsCategoryName} <b class="caret"></b></a> 
           <ul class="dropdown-menu">
             <c:forEach items="${d.propertyDealsSubCategory}" var="k">
             <li class="kopie"><a href="#">${k.propertyType}</a></li>
@@ -72,11 +72,11 @@
 
 <sec:authorize access="hasRole('ROLE_USER')">
 <li class="dropdown">
-		<a href="#"><b>My Account <i class="fa fa-cog fa-lg" aria-hidden="true" data-toggle="tooltip" title="Manage Your Account User: ${username}!"></i></b><b class="caret"></b></a>
+		<a href="#"><b>My Account <i class="fa fa-cogs fa-lg" aria-hidden="true" data-toggle="tooltip" title="Manage Your Account User: ${username}!"></i></b><b class="caret"></b></a>
 		<ul class="dropdown-menu">
-			<li><a href="listOfShortList"><i class="fa fa fa-user fa-lg" aria-hidden="true"></i> ShortList</a></li>
-			<li><a href="wishList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> WishList</a></li>
-			<li><a href="confirmedList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Transaction History</a></li>
+			<li><a href="listOfShortList"><i class="fa fa fa-star fa-lg" aria-hidden="true"></i> Shortlist</a></li>
+			<li><a href="wishList"><i class="fa fa-heart fa-lg" aria-hidden="true"></i> Wishlist</a></li>
+			<li><a href="confirmedList"><i class="fa fa-list-ol fa-lg" aria-hidden="true"></i> Previous Deals</a></li>
 		</ul>
 </li>
 </sec:authorize>
@@ -115,7 +115,8 @@
 <!--                             </h3> -->
                             <br><br><br><br><br><br>
                             <div class="">
-                                <a class="btn btn-theme btn-sm btn-min-block" href="login">Sign In!</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm">Register</a></div>
+                                <a class="btn btn-theme btn-sm btn-min-block" href="login" style="">Sign In!</a><a class="btn btn-theme btn-sm btn-min-block" href="registerForm" style="">Register</a>
+                            </div>
                               
                         </div>
                     </div><!-- /header-text -->
@@ -263,11 +264,14 @@
                 <h5>Starting at <b><i class="fa fa-inr" aria-hidden="true" style="color:green;"></i>{{k.propertyPrice}}</b></h5>
                 <h5><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:#F50057;"></i> {{k.propertyDescription}}</h5><hr>
 
-                
-                <a href="viewProperty-{{k.propertyId}}" class="btn btn-info btn-md" role="button" data-toggle="tooltip" title="Click to View More Details!"><i class="fa fa-info fa-lgs" aria-hidden="true" style="line-height:0;"></i> <i class="fa fa-eye fa-lg" aria-hidden="true"></i></a>
-                <a href="shortListProperty-{{k.propertyId}}" class="btn btn-warning btn-md" role="button" data-toggle="tooltip" title="Click to Book Right Now!"><i class="fa fa-bolt fa-lg" aria-hidden="true"></i> <i class="fa fa-credit-card fa-lg" aria-hidden="true"></i></a>
-            	<a href="addToWishList-{{k.propertyId}}" class="btn btn-danger btn-md" data-toggle="tooltip" title="Click to Add Property to Wishlist!" role="button"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
-            	<a href="addShortList-{{k.propertyId}}" class="btn btn-success btn-md" data-toggle="tooltip" title="Click to Add Property to Your ShortList!" role="button"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></a>
+                <div class="btn-group btn-group-justified">
+                <a href="viewProperty-{{k.propertyId}}" class="btn btn-info btn-md btn-block" role="button" data-toggle="tooltip" title="View Property Detail!">  <i class="fa fa-eye" aria-hidden="true"></i> <i class="fa fa-lg fa-list-ol" aria-hidden="true"></i></a>
+                <a href="viewPropertyContactDetail-{{k.propertyId}}" class="btn btn-info btn-md btn-block" role="button" data-toggle="tooltip" title="View Dealer Contact Detail!"><span class="glyphicon glyphicon-phone-alt"></span> / <i class="fa fa-phone fa-lg" aria-hidden="true"></i> / <i class="fa fa-mobile fa-lg" aria-hidden="true"></i></a>
+                </div><br>
+                <a href="addToWishList-{{k.propertyId}}" class="btn btn-danger btn-md btn-block" data-toggle="tooltip" title="Add Property to Wishlist!" role="button"><i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
+<br>
+                <a href="shortListProperty-{{k.propertyId}}" class="btn btn-warning btn-md" role="button" data-toggle="tooltip" title="Book Right Now!"><i class="fa fa-bolt fa-lg" aria-hidden="true"></i> <i class="fa fa-credit-card fa-lg" aria-hidden="true"></i></a>  	
+            	<a href="addShortList-{{k.propertyId}}" class="btn btn-success btn-md pull-right" data-toggle="tooltip" title="Add Property to ShortList!" role="button"><i class="fa fa-star fa-lg" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -279,7 +283,7 @@
 <!-- Angular Js script to fetch dynamic values -->
 <script>
 angular.module('myApp', []).controller('myController',function($scope) {
-			$scope.klm = ${listViewProperty}; $scope.abc= ${userList};
+			$scope.klm = ${listViewProperty};
 		});
 </script>
 

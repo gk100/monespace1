@@ -124,5 +124,15 @@ public class PropertyController {
 		modelAndView.addObject("listViewProperty", g);
 		return modelAndView;
 	}
+	
+	@RequestMapping(value="/viewPropertyContactDetail-{propertyId}")
+	public ModelAndView viewPropertyContactDetail (@ModelAttribute("ViewProperty") ViewProperty viewProperty,@PathVariable("propertyId") int propertyId) {
+		ViewProperty vp = viewPropertyService.getViewPropertyById(propertyId);
+		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String g = gson.toJson(vp);
+		ModelAndView modelAndView = new ModelAndView("viewPropertyContactDetail");
+		modelAndView.addObject("listViewProperty", g);
+		return modelAndView;
+	}
 
 }

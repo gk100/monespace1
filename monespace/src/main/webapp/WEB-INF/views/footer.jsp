@@ -1,5 +1,6 @@
 <!--footer starts-->
 <footer class="footer1" background= "resources/img/City_Skyline-optmized.png"  style="background-color: #1A237E;">
+
 <div class="container">
 	
 <div class="row"><!-- row -->            
@@ -10,12 +11,12 @@
                                 <ul>
                                 	<li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Sell/Rent Property</a></li>
                                     <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Buy Our Services</a></li>
-                                    <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i>Real Estate Developers</a></li>
+                                    <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Real Estate Developers</a></li>
                                     <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> All Projects </a></li>
-                                     <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Search Property</a></li>
-                                      <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Search Projects</a></li>
-                                      <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Search Dealers</a></li>
-                                       <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Register Now</a></li>                                  
+                                    <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Search Property</a></li>
+                                    <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Search Projects</a></li>
+                                    <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Search Dealers</a></li>
+                                    <li><a  href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Register Now</a></li>                                  
                                 </ul>                    
 							</li>                            
                         </ul>                                             
@@ -46,8 +47,8 @@
 									<li><a href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Request Info</a></li>
 									<li><a href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Feedback</a></li>
 									<li><a href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Report a problem</a></li>
-									<li><a href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Testimonials</a></li>
-									<li><a href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i>  Privacy Policy</a></li>
+									<li><a href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Testimonial</a></li>
+									<li><a href="#" style="color: #f5f5f5;"><i class="fa fa-angle-double-right" style="color: #FFC107;"></i> Privacy Policy</a></li>
                                 </ul>                   
 							</li>                            
                  </ul>                                            

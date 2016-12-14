@@ -32,33 +32,8 @@ public class ShortListedPropertyController {
 	
 	@Autowired
 	private PropertyService propertyService;
-		
-//****************************************************************************************************************************	
-	@SuppressWarnings("unchecked")
-	@RequestMapping("/updateFlag")
-	public String updateShortListFlag(HttpSession session) {
-		List<ShortListedProperty> k = (List<ShortListedProperty>) session.getAttribute("listOfShortList");
-		if (k== null || session.getAttribute("checkoutbookNow") == "bookNow") {
-			shortListedPropertyService.updateShortListedPropertyFlag((Integer) session.getAttribute("shortListedPropertyId"));
-		}
-		else {
-			for (ShortListedProperty p : k) {
-				shortListedPropertyService.updateShortListedPropertyFlag(p.getShortListedPropertyId());
-			}
-		}
-		return "redirect:/home";
-	}
 	
-	@RequestMapping(value="/deleteShortListedProperty-{shortListedPropertyId}", method=RequestMethod.GET)
-	public String deleteShortListedProperty(@PathVariable ("shortListedPropertyId") int shortListedPropertyId, HttpSession session) {
-		int propertyId = (Integer) session.getAttribute("propertyId"+shortListedPropertyId);
-		propertyService.updtePropertyPlus(propertyId);
-		shortListedPropertyService.deleteShortListedList(shortListedPropertyId);
-		return "redirect:/home";
-	}
-	
-	
-	/***************************************************************************************************************************/
+	/*********************************************** For Book Now *******************************************************************/
 	@RequestMapping("/shortListProperty-{propertyId}")
 	public String addToBookNow(@ModelAttribute("shortListedProperty") ShortListedProperty shortListedProperty, @PathVariable("propertyId") int propertyId, Model model, HttpSession session) {
 		if (propertyService.getPropertyById(propertyId).getQuantity()<=0) {
@@ -71,9 +46,6 @@ public class ShortListedPropertyController {
 		shortListedProperty.setShortListId(userId);
 		shortListedProperty.setFlag(false);
 		shortListedProperty.setPropertyId(propertyId);
-		
-//		session.setAttribute("propertyId", propertyId);
-//		propertyId=(Integer) session.getAttribute("propertyId");
 		
 		shortListedProperty.setPropertyName(propertyService.getPropertyById(propertyId).getPropertyName());
 		shortListedProperty.setPropertyPrice(propertyService.getPropertyById(propertyId).getPropertyPrice());
@@ -103,16 +75,15 @@ public class ShortListedPropertyController {
 		return "shortListedProperty";
 	}
 	
-	@RequestMapping("/checkout")
-	public String getCheckOut(HttpSession session) {
-		Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
-		String user = authentication.getName();
-		int userId= userService.getUserDetailByName(user).getUserId();
-		session.setAttribute("userId", userId);
-		return "redirect:/check?userId="+userId;
-		//return "redirect:/shortList"
+	@RequestMapping(value="/deleteShortListedProperty-{shortListedPropertyId}", method=RequestMethod.GET)
+	public String deleteShortListedProperty(@PathVariable ("shortListedPropertyId") int shortListedPropertyId, HttpSession session) {
+		int propertyId = (Integer) session.getAttribute("propertyId"+shortListedPropertyId);
+		propertyService.updtePropertyPlus(propertyId);
+		shortListedPropertyService.deleteShortListedList(shortListedPropertyId);
+		return "redirect:/home";
 	}
-	/**************************************************************************************************/
+	
+	/***************************************************To add Property to ShortList ***********************************************/
 	
 	@RequestMapping("/addShortList-{propertyId}")
 	public String addToShortList(@ModelAttribute ("shortListedProperty") ShortListedProperty shortListedProperty,@PathVariable("propertyId") int propertyId, Model model, HttpSession session) {
@@ -127,9 +98,6 @@ public class ShortListedPropertyController {
 		shortListedProperty.setShortListId(userId);
 		shortListedProperty.setFlag(false);
 		shortListedProperty.setPropertyId(propertyId);
-		
-//		session.setAttribute("propertyId", propertyId);
-//		propertyId=(Integer) session.getAttribute("propertyId");
 		
 		shortListedProperty.setPropertyName(propertyService.getPropertyById(propertyId).getPropertyName());
 		shortListedProperty.setPropertyPrice(propertyService.getPropertyById(propertyId).getPropertyPrice());
@@ -164,6 +132,40 @@ public class ShortListedPropertyController {
 		String json=gson.toJson(sp);
 		model.addAttribute("listOfShortList", json);
 		return "shortListedProperties";
+	}
+	
+	@RequestMapping(value="/deleteOneShortListedProperty-{shortListedPropertyId}", method=RequestMethod.GET)
+	public String deleteOneShortListedProperty(@PathVariable ("shortListedPropertyId") int shortListedPropertyId, HttpSession session) {
+		int propertyId = (Integer) session.getAttribute("propertyId"+shortListedPropertyId);
+		propertyService.updtePropertyPlus(propertyId);
+		shortListedPropertyService.deleteShortListedList(shortListedPropertyId);
+		return "redirect:/listOfShortList";
+	}
+	
+	/****************************************************************************************************************************/
+	
+	@RequestMapping("/checkout")
+	public String getCheckOut(HttpSession session) {
+		Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
+		String user = authentication.getName();
+		int userId= userService.getUserDetailByName(user).getUserId();
+		session.setAttribute("userId", userId);
+		return "redirect:/check?userId="+userId;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@RequestMapping("/updateFlag")
+	public String updateShortListFlag(HttpSession session) {
+		List<ShortListedProperty> k = (List<ShortListedProperty>) session.getAttribute("listOfShortList");
+		if (k== null || session.getAttribute("checkoutbookNow") == "bookNow") {
+			shortListedPropertyService.updateShortListedPropertyFlag((Integer) session.getAttribute("shortListedPropertyId"));
+		}
+		else {
+			for (ShortListedProperty p : k) {
+				shortListedPropertyService.updateShortListedPropertyFlag(p.getShortListedPropertyId());
+			}
+		}
+		return "redirect:/home";
 	}
 	
 	@RequestMapping("/confirmedList")

@@ -1,6 +1,9 @@
 package com.monespace.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.monespace.Service.DealsCategoryService;
 import com.monespace.model.DealsCategory;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
 @Controller
 public class DealsCategoryController {
@@ -17,11 +21,37 @@ public class DealsCategoryController {
 	@Autowired
 	private DealsCategoryService dealsCategoryService;
 
-	@RequestMapping(value="/add/category", method= RequestMethod.POST)
-	public String addDealsCategories(@ModelAttribute("dealsCategory") DealsCategory dealsCategory) {
-		this.dealsCategoryService.createDealsCategory(dealsCategory);
-		return "redirect:/category";
-	}
+	@RequestMapping(value="/addcategory", method= RequestMethod.POST)
+	public String addDealsCategories(@Valid @ModelAttribute("dealsCategory") DealsCategory dealsCategory, BindingResult result, Model model) {
+		
+		if (result.hasErrors()) {
+			model.addAttribute("listDealsCategory", this.dealsCategoryService.getCategories());
+			return "category";
+		}
+		else {
+			this.dealsCategoryService.createDealsCategory(dealsCategory);
+			return "redirect:/category";
+			}
+		}
+//		/******************for checking duplicate Entry*********************************/
+//		List<DealsCategory> listDealsCategories = dealsCategoryService.listDealsCategories();
+//		
+//		String status="success";
+//		if (dealsCategory.getdealsCategoryName().isEmpty()) {
+//			messageContext.addMessage(new MessageBuilder().error().source("dealsCategory").defaultText("Category is Mandatory").build());
+//			status="failure";
+//		}
+//		else if (!dealsCategory.getdealsCategoryName().isEmpty()) {
+//			for (DealsCategory dc:listDealsCategories) {
+//				if (dc.getdealsCategoryName().equals(dealsCategory.getdealsCategoryName())) {
+//					messageContext.addMessage(new MessageBuilder().error().source("dealsCategory").defaultText("This Category is Already Present. Please Enter Another.").build());
+//					status="failure";
+//					break;
+//				}
+//			}
+//		}
+//		/******************************************************************************************/
+
 
 	@RequestMapping("/category")
 	public String getCategory(Model model)

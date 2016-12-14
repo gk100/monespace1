@@ -74,7 +74,7 @@
 	</action-state>
 	<action-state id="updateBillingAddress">
 		<evaluate expression="userService.saveOrUpdateUserBillingAddress(userBillingAddress)"></evaluate>
-		<transition to="paymentGateway"></transition>
+		<transition to="billingAddress"></transition>
 	</action-state>
 	
 	<view-state id="paymentGateway" view = "paymentPortal" model="bookNow">												<!--5) paymentPortal.jsp  -->

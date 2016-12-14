@@ -44,7 +44,7 @@
 					
 					<td><img src="resources/img/{{k.propertyId}}.jpg" width="100" height="100"></td>
 					<td>
-					<a href="deleteShortListedProperty-{{k.shortListedPropertyId}}" data-toggle="tooltip" title="Click to Delete WishListed Property!">
+					<a href="deleteOneShortListedProperty-{{k.shortListedPropertyId}}" data-toggle="tooltip" title="Remove From ShortList!">
 					<span class="glyphicon glyphicon-trash" style="color: #F44336;"></span></a>
 					</td>
 				</tr>

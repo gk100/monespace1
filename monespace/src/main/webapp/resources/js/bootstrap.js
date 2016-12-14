@@ -2375,14 +2375,3 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
-
-
-//media slider
-$(document).ready(function() {
-	  $('#media').carousel({
-	    pause: true,
-	    interval: false,
-	  });
-	});
-
-//====

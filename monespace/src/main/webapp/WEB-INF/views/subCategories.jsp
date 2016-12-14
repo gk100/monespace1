@@ -17,7 +17,7 @@
 	<div class="responsive">
 		<h2><b>Manage Sub Category</b></h2>
 
-				<form:form method="POST" action="add/subCategories" modelAttribute="propertyDealsSubCategory">
+				<form:form method="POST" action="addSubCategories" modelAttribute="propertyDealsSubCategory">
 				<form:input path="propertyDealsSubCategoryId" hidden="true"/>
 			
 			<div class="form-group">
@@ -28,6 +28,7 @@
 			<div class="col-xs-6">
 				<label for="propertyType">SubCategory: </label>
 				<form:input class="form-control input border light-grey" type="text" path="propertyType" placeholder="Enter Subcategory"/>
+				<form:errors path="propertyType" style="color:red;"/>
 			</div>
 				<button type="submit" class="btn btn-success" data-toggle="tooltip" title="Submit Category From Here!">Submit</button>
 			

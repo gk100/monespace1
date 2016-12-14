@@ -4,125 +4,71 @@
 <title>MonEspace!-Buy/Sell/Rent/Construct/Properties Portal</title>
 
 <!--2) For Putting Logo on Tab -->
-
-<link rel="apple-touch-icon" sizes="180x180" href="resources/img/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="resources/img/favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="resources/img/favicons/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="resources/img/favicons/manifest.json">
-<link rel="mask-icon" href="resources/img/favicons/safari-pinned-tab.svg" style= "color: #5bbad5;">
-<meta name="theme-color" content="#e3f2fd">
-
+		<link rel="apple-touch-icon" sizes="180x180" href="resources/img/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="resources/img/favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="resources/img/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="resources/img/favicons/manifest.json">
+		<link rel="mask-icon" href="resources/img/favicons/safari-pinned-tab.svg" style= "color: #5bbad5;">
+		<meta name="theme-color" content="#e3f2fd">
 <!-- Logo End -->
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-<!-- Bootstrap Core CSS -->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/css/bootstrap.css" rel="stylesheet">
-    
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
 <!-- Custom CSS -->
-    <link href="resources/css/full-slider.css" rel="stylesheet">
-    <link href="resources/css/my-style.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body style= "background-color: powderblue;">
-												<!-- Navigation -->
-
- <!-- Navigation -->
-    <nav class="navbar1 navbar-inverse1 navbar-fixed-top1" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://localhost:8080/monespace/">
-                    <img src="resources/img/MonEspace!.png" style="height:100%;">
-<!--                     <img src="http://placehold.it/150x50&text=Logo" alt=""> -->
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="aboutUs"><span class="glyphicon glyphicon-info-sign"></span><b> AboutUs!</b></a>
-                    </li>
-                    <li>
-                        <a href="home"><span class="glyphicon glyphicon-home"></span><b> Home!</b></a>
-                    </li>
-                    <li>
-                        <a href="contactUs"><span class="glyphicon glyphicon-earphone"></span><b> ContactUs!</b></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
-<!--     <div class="container"> -->
-<!--         <div class="row"> -->
-<!--             <div class="col-lg-12"> -->
-<!--                 <h1>Logo Nav by Start Bootstrap</h1> -->
-<!--                 <p>Note: You may need to adjust some CSS based on the size of your logo. The default logo size is 150x50 pixels.</p> -->
-<!--             </div> -->
-<!--         </div> -->
-<!--     </div> -->
-    <!-- /.container -->
-    
-  <!-- ************************************************************************************ -->
-
-    
-<!--     <nav class="navbar navbar-transparent navbar-fixed-top" role="navigation"> -->
-<!--         <div class="container"> -->
-<!--             Brand and toggle get grouped for better mobile display -->
-<!--             <div class="navbar-header"> -->
-<!--                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> -->
-<!--                     <span class="sr-only">Toggle navigation</span> -->
-<!--                     <span class="icon-bar"></span> -->
-<!--                     <span class="icon-bar"></span> -->
-<!--                     <span class="icon-bar"></span> -->
-<!--                 </button>                -->
-<!--                 <a class="navbar-brand" style="padding: 0px;" href="http://localhost:8080/monespace/" ><img src="resources/img/MonEspace.png" style="padding: 15px; width: auto; height:auto;"></a> -->
-<!--             </div> -->
-<!--             Collect the nav links, forms, and other content for toggling -->
-<!--             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> -->
-<!--                 <ul class="nav navbar-nav"> -->
-<!--                     <li> -->
-<!--                         <a href="aboutUs"><b>About Us</b></a> -->
-<!--                     </li> -->
-<!--                     <li> -->
-<!--                         <a href="home"><b>Home</b></a> -->
-<!--                     </li> -->
-<!--                     <li> -->
-<!--                         <a href="contactUs"><b>Contact Us</b></a> -->
-<!--                     </li> -->
-<!--                 </ul> -->
-<!--             </div> -->
-<!--             /.navbar-collapse -->
-<!--         </div> -->
-<!--         /.container -->
-<!--     </nav> -->
-
-
-   								 <!-- Full Page Image Background Carousel Header -->
+		<link href="resources/css/my-style.css" rel="stylesheet">
+		<link href="resources/css/full-slider.css" rel="stylesheet">
+<!--    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
    
-    <header id="myCarousel" class="carousel slide">
+<!-- Bootstrap Core CSS -->
+		<link href="resources/css/bootstrap.css" rel="stylesheet">
+		<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/font-awesome/css/font-awesome.css"  rel="stylesheet">
+		<link href="resources/font-awesome/css/font-awesome.min.css"  rel="stylesheet">	
+
+</head>
+
+<body style= "background-color: #BBDEFB;">
+
+ <!-- Navigation Bar Starts-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" Style= "background-color: #0D47A1; border-color: #0D47A1;">
+	<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+        	<button type="button" class="navbar-toggle" Style= "background-color: #0D47A1; border-color: #fff;" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            	<span class="sr-only" style="color:white;">Toggle navigation</span>
+                <span class="icon-bar" style="color:white;"></span>
+                <span class="icon-bar" style="color:white;"></span>
+                <span class="icon-bar" style="color:white;"></span>
+            </button>
+                <a class="navbar-brand" href="http://localhost:8080/monespace/">
+                	<img src="resources/img/MonEspace!.png" style="height:100%;">
+               </a>
+        </div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        	<ul class="nav navbar-nav">
+            	<li>
+                	<a href="aboutUs"><span class="glyphicon glyphicon-info-sign"></span><strong> AboutUs!</strong></a>
+                </li>
+                <li>
+                    <a href="home"><span class="glyphicon glyphicon-home"></span><b> Home!</b></a>
+                </li>
+                <li>
+                    <a href="contactUs"><span class="glyphicon glyphicon-earphone"></span><b> ContactUs!</b></a>
+                </li>
+            </ul>
+         </div>
+ <!-- /.navbar-collapse Ends-->
+	</div>
+<!-- /.container Ends-->
+</nav>
+
+<!-- Full Page Image Background Carousel Header Starts-->
+<header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="resources/img/bg-Mumbai.jpg" data-slide-to="0" class="active"></li>
@@ -131,9 +77,9 @@
             <li data-target="resources/img/bg-Mumbai1.jpg" data-slide-to="3"></li>
             <li data-target="resources/img/bg-Chennai.jpg" data-slide-to="4"></li>
             <li data-target="resources/img/bg-Banguluru.jpg" data-slide-to="5"></li>
-        </ol>
+       </ol>
 
-        <!-- Wrapper for Slides -->
+<!-- Wrapper for Slides -->
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
@@ -193,37 +139,17 @@
             <span class="icon-next"></span>
         </a>
     </header>
-<!--     Page Content -->
-<!--     <div class="container"> -->
-
-<!--         <div class="row"> -->
-<!--             <div class="col-lg-12"> -->
-<!--                 <h3>Welcome to Mon Espace!</h3> -->
-<!--                 <h4>Where you can Find Your Own Space to Live!...to Enjoy Life!</h4>  -->
-<!--             </div> -->
-<!--         </div> -->
-
-<!--         <hr> -->
 
         <!-- Footer -->
         <div class="footer-bottom">
         <div class="container">
             <p class="pull-left"> Copyright <i><b>Mon Espace!</b></i> Plugin 2016. All right reserved. </p>
-<!--             <div class="pull-right"> -->
-<!--                 <ul class="nav nav-pills payments"> -->
-<!--                 	<li><i class="fa fa-cc-visa"></i></li> -->
-<!--                     <li><i class="fa fa-cc-mastercard"></i></li> -->
-<!--                     <li><i class="fa fa-cc-amex"></i></li> -->
-<!--                     <li><i class="fa fa-cc-paypal"></i></li> -->
-<!--                 </ul>  -->
-<!--             </div> -->
-<!--         </div> -->
+        </div>
     </div>
     <!--/.footer-bottom--> 
-
     </div>
     <!-- /.container -->
-
+    
     <!-- jQuery -->
     <script src="resources/js/jquery.js"></script>
 
