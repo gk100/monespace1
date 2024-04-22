@@ -8,6 +8,24 @@ Dealer - who wants to add property either for renting or selling
 Admin - who can monitor the changes made by Dealer into the database and can authorize the changes made. Also) to Buy, Sell or Rent Properties available on website. 
 
 <img src="monEspace_FileManagement.JPG" alt="Project File Management Details">
+<p>Following are different elements included in the project folder with their purpose/function in brief:</p>
+<ol>
+  <li>Main Folder</li>
+  <li>Resources Folder</li>
+  <li>webapp Folder</li>
+  <ol>
+    <li>Flows</li>
+    <li>Views</li>
+    <li>Web.INF</li>
+  </ol>
+  <li>test Folder</li>
+  <li>Pom.XML file: includes address of different dependancies required for web application</li>
+  <li>Dispatch-servlet.xml file</li>
+  <li>Security-Servlet.xml file</li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ol>
 
 <img src="Spring_MVC_FrameWork.JPG" alt="Spring MVC Framework">
 <p>The Spring MVC Frmae work mainly includes following list of elements with their function in brief:</p>
@@ -18,8 +36,6 @@ Admin - who can monitor the changes made by Dealer into the database and can aut
   <li>View Pages: Includes different View Pages that end-user can see or send a request to see</li>
   <li>Model class: Also called "Pojo files" which are the schema or skeleton of different objects that can be added into the database i.e., details of properties/real estate, user roles, user details which they provide during registration, user transactions, etc. in case of this web application</li>
 </ol>
-
-
 
 <h2>Web-Flow process</h2>
 <p>The web flow process is provided for:</p>
